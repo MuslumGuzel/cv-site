@@ -1,0 +1,886 @@
+---
+// Page metadata
+import '../styles/global.css';
+
+const title = "Müslüm GÜZEL - Software Developer | CV"
+const description = "Experienced Software Developer specializing in .NET, React, and modern web technologies. Turkish Airlines Technology & Turkcell Technology background."
+---
+
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description" content={description}>
+    
+    <!-- OpenGraph / Social Media -->
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://muslumguzel.com">
+    <meta property="profile:first_name" content="Müslüm">
+    <meta property="profile:last_name" content="GÜZEL">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    
+    <!-- Additional SEO -->
+    <meta name="author" content="Müslüm GÜZEL">
+    <meta name="keywords" content="software developer, .NET, React, Turkish Airlines Technology, Turkcell, web development, İstanbul">
+    <link rel="canonical" href="https://muslumguzel.com">
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <style>
+        /* Trust-Based Color Palettes - Based on Psychology Research */
+        
+        .theme-corporate {
+            --bg-from: #0f1419;
+            --bg-via: #1e3a8a;
+            --bg-to: #0f1419;
+            --primary: #3b82f6;
+            --secondary: #1d4ed8;
+            --accent: #60a5fa;
+            --gradient-1: #3b82f6;
+            --gradient-2: #1d4ed8;
+            --gradient-3: #60a5fa;
+        }
+        
+        .theme-navy {
+            --bg-from: #111827;
+            --bg-via: #1e293b;
+            --bg-to: #111827;
+            --primary: #1e40af;
+            --secondary: #1e3a8a;
+            --accent: #3b82f6;
+            --gradient-1: #1e40af;
+            --gradient-2: #1e3a8a;
+            --gradient-3: #3b82f6;
+        }
+        
+        .theme-trustworthy {
+            --bg-from: #0c1221;
+            --bg-via: #1e2a4a;
+            --bg-to: #0c1221;
+            --primary: #2563eb;
+            --secondary: #1d4ed8;
+            --accent: #3b82f6;
+            --gradient-1: #2563eb;
+            --gradient-2: #1d4ed8;
+            --gradient-3: #3b82f6;
+        }
+        
+        .theme-executive {
+            --bg-from: #1f2937;
+            --bg-via: #374151;
+            --bg-to: #1f2937;
+            --primary: #1f2937;
+            --secondary: #4b5563;
+            --accent: #6b7280;
+            --gradient-1: #1f2937;
+            --gradient-2: #4b5563;
+            --gradient-3: #6b7280;
+        }
+        
+        .theme-financial {
+            --bg-from: #0f172a;
+            --bg-via: #1e3a8a;
+            --bg-to: #0f172a;
+            --primary: #1d4ed8;
+            --secondary: #2563eb;
+            --accent: #3b82f6;
+            --gradient-1: #1d4ed8;
+            --gradient-2: #2563eb;
+            --gradient-3: #3b82f6;
+        }
+        
+        .theme-professional {
+            --bg-from: #18181b;
+            --bg-via: #27272a;
+            --bg-to: #18181b;
+            --primary: #71717a;
+            --secondary: #52525b;
+            --accent: #a1a1aa;
+            --gradient-1: #71717a;
+            --gradient-2: #52525b;
+            --gradient-3: #a1a1aa;
+        }
+
+        .theme-oceanic {
+            --bg-from: #1a2332;
+            --bg-via: #2b4a4a;
+            --bg-to: #1a2332;
+            --primary: #67b7d1;
+            --secondary: #5fb3a3;
+            --accent: #7dd3c0;
+            --gradient-1: #67b7d1;
+            --gradient-2: #5fb3a3;
+            --gradient-3: #7dd3c0;
+        }
+        
+        .theme-sunset {
+            --bg-from: #2a2139;
+            --bg-via: #5d3a2b;
+            --bg-to: #2a2139;
+            --primary: #e69c7a;
+            --secondary: #d1897a;
+            --accent: #e8b48a;
+            --gradient-1: #e69c7a;
+            --gradient-2: #d1897a;
+            --gradient-3: #e8b48a;
+        }
+        
+        .theme-forest {
+            --bg-from: #1e2a1e;
+            --bg-via: #2d4a2d;
+            --bg-to: #1e2a1e;
+            --primary: #8db88d;
+            --secondary: #7aa47a;
+            --accent: #9cc89c;
+            --gradient-1: #8db88d;
+            --gradient-2: #7aa47a;
+            --gradient-3: #9cc89c;
+        }
+        
+        .theme-royal {
+            --bg-from: #2a1f35;
+            --bg-via: #4a355c;
+            --bg-to: #2a1f35;
+            --primary: #a88cc8;
+            --secondary: #8a7bb8;
+            --accent: #b59cd9;
+            --gradient-1: #a88cc8;
+            --gradient-2: #8a7bb8;
+            --gradient-3: #b59cd9;
+        }
+        
+        .theme-neon {
+            --bg-from: #0c0a09;
+            --bg-via: #7c2d12;
+            --bg-to: #0c0a09;
+            --primary: #ff0080;
+            --secondary: #00ff80;
+            --accent: #8000ff;
+            --gradient-1: #ff0080;
+            --gradient-2: #00ff80;
+            --gradient-3: #8000ff;
+        }
+        
+        .theme-minimal {
+            --bg-from: #18181b;
+            --bg-via: #374151;
+            --bg-to: #18181b;
+            --primary: #6b7280;
+            --secondary: #9ca3af;
+            --accent: #d1d5db;
+            --gradient-1: #6b7280;
+            --gradient-2: #9ca3af;
+            --gradient-3: #d1d5db;
+        }
+        
+        .theme-lavender {
+            --bg-from: #1e1b2e;
+            --bg-via: #3a2a52;
+            --bg-to: #1e1b2e;
+            --primary: #c4a4d9;
+            --secondary: #b19cd9;
+            --accent: #d6c7e8;
+            --gradient-1: #c4a4d9;
+            --gradient-2: #b19cd9;
+            --gradient-3: #d6c7e8;
+        }
+        
+        .theme-sage {
+            --bg-from: #1a2319;
+            --bg-via: #2d4a2b;
+            --bg-to: #1a2319;
+            --primary: #a8c8a5;
+            --secondary: #96b893;
+            --accent: #c9dcc6;
+            --gradient-1: #a8c8a5;
+            --gradient-2: #96b893;
+            --gradient-3: #c9dcc6;
+        }
+        
+        .theme-rose {
+            --bg-from: #2a1d1f;
+            --bg-via: #4d3337;
+            --bg-to: #2a1d1f;
+            --primary: #e8b4cb;
+            --secondary: #d4a0b8;
+            --accent: #f0c8d4;
+            --gradient-1: #e8b4cb;
+            --gradient-2: #d4a0b8;
+            --gradient-3: #f0c8d4;
+        }
+        
+        .theme-peach {
+            --bg-from: #2d1f19;
+            --bg-via: #4f3529;
+            --bg-to: #2d1f19;
+            --primary: #f2c5a0;
+            --secondary: #e6b08a;
+            --accent: #f5d4b8;
+            --gradient-1: #f2c5a0;
+            --gradient-2: #e6b08a;
+            --gradient-3: #f5d4b8;
+        }
+        
+        .theme-sky {
+            --bg-from: #1a2332;
+            --bg-via: #2e4057;
+            --bg-to: #1a2332;
+            --primary: #87ceeb;
+            --secondary: #7db8d9;
+            --accent: #b0e0f7;
+            --gradient-1: #87ceeb;
+            --gradient-2: #7db8d9;
+            --gradient-3: #b0e0f7;
+        }
+        
+        .theme-mint {
+            --bg-from: #192d26;
+            --bg-via: #2b4d40;
+            --bg-to: #192d26;
+            --primary: #98e4d6;
+            --secondary: #7dd3c0;
+            --accent: #b8f0e5;
+            --gradient-1: #98e4d6;
+            --gradient-2: #7dd3c0;
+            --gradient-3: #b8f0e5;
+        }
+        
+        .theme-cream {
+            --bg-from: #2d2824;
+            --bg-via: #4a453d;
+            --bg-to: #2d2824;
+            --primary: #e6d7c3;
+            --secondary: #d4c5a9;
+            --accent: #f0e9d8;
+            --gradient-1: #e6d7c3;
+            --gradient-2: #d4c5a9;
+            --gradient-3: #f0e9d8;
+        }
+        
+        .theme-light {
+            --bg-from: #ffffff;
+            --bg-via: #f8fafc;
+            --bg-to: #ffffff;
+            --primary: #2563eb;
+            --secondary: #1d4ed8;
+            --accent: #3b82f6;
+            --gradient-1: #2563eb;
+            --gradient-2: #1d4ed8;
+            --gradient-3: #3b82f6;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --text-light: #6b7280;
+        }
+        
+        body {
+            background: linear-gradient(to bottom right, var(--bg-from), var(--bg-via), var(--bg-to));
+        }
+        
+        .bg-primary { background-color: var(--primary); }
+        .bg-secondary { background-color: var(--secondary); }
+        .bg-accent { background-color: var(--accent); }
+        .text-primary { color: var(--primary); }
+        .text-secondary { color: var(--secondary); }
+        .text-accent { color: var(--accent); }
+        
+        .gradient-text {
+            background: linear-gradient(to right, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(to right, var(--gradient-1), var(--gradient-2));
+        }
+        
+        .gradient-border {
+            background: linear-gradient(to right, var(--gradient-1), var(--gradient-2));
+        }
+        
+        /* Light theme specific styles */
+        .theme-light .text-white {
+            color: var(--text-primary) !important;
+        }
+        
+        .theme-light .text-gray-200,
+        .theme-light .text-gray-300 {
+            color: var(--text-secondary) !important;
+        }
+        
+        .theme-light .text-gray-400,
+        .theme-light .text-gray-500 {
+            color: var(--text-light) !important;
+        }
+        
+        .theme-light .backdrop-blur-lg {
+            background: rgba(255, 255, 255, 0.8) !important;
+            border-color: rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .theme-light .bg-white\/10 {
+            background: rgba(0, 0, 0, 0.05) !important;
+        }
+        
+        .theme-light .border-white\/20 {
+            border-color: rgba(0, 0, 0, 0.1) !important;
+        }
+    </style>
+    
+</head>
+
+<body class="theme-oceanic min-h-screen text-white antialiased">
+    <div class="min-h-screen relative overflow-hidden">
+        <!-- Theme Selector -->
+        <div class="fixed top-6 right-6 z-50">
+            <select id="themeSelector" class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl px-4 py-2 text-white text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white/30 cursor-pointer">
+                <!-- Trust & Professional Themes (Psychology-Based) -->
+                <option value="corporate">🏢 Corporate Blue</option>
+                <option value="navy">⚓ Navy Trust</option>
+                <option value="trustworthy">🤝 Trustworthy</option>
+                <option value="executive">💼 Executive</option>
+                <option value="financial">🏦 Financial</option>
+                <option value="professional">⭐ Professional</option>
+                
+                <!-- Original Themes -->
+                <option value="oceanic">🌊 Oceanic</option>
+                <option value="sunset">🌅 Sunset</option>
+                <option value="forest">🌲 Forest</option>
+                <option value="royal">👑 Royal</option>
+                <option value="neon">⚡ Neon</option>
+                <option value="minimal">⚪ Minimal</option>
+                
+                <!-- Pastel Themes -->
+                <option value="lavender">🌸 Lavender</option>
+                <option value="sage">🍃 Sage</option>
+                <option value="rose">🌹 Rose</option>
+                <option value="peach">🍑 Peach</option>
+                <option value="sky">☁️ Sky</option>
+                <option value="mint">🌿 Mint</option>
+                <option value="cream">🤍 Cream</option>
+                <option value="light">☀️ Light Mode</option>
+            </select>
+        </div>
+
+        <!-- Download Buttons - Left Side -->
+        <div class="fixed left-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col space-y-3 hidden md:flex">
+            <div class="group relative">
+                <a href="/Muslum%20GUZEL-CV.pdf" download class="flex items-center justify-center w-12 h-12 gradient-bg rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 group">
+                    <span class="text-white text-xs font-bold">PDF</span>
+                </a>
+                <div class="absolute left-16 top-1/2 transform -translate-y-1/2 bg-black/80 text-white text-sm px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                    Download CV (PDF)
+                </div>
+            </div>
+            
+            <div class="group relative">
+                <a href="/Muslum%20GUZEL-CV-F.pdf" download class="flex items-center justify-center w-12 h-12 bg-secondary rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 group">
+                    <span class="text-white text-xs font-bold">DOC</span>
+                </a>
+                <div class="absolute left-16 top-1/2 transform -translate-y-1/2 bg-black/80 text-white text-sm px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                    Download CV (Word)
+                </div>
+            </div>
+            
+            <div class="group relative">
+                <a href="/Cover%20Letter.docx" download class="flex items-center justify-center w-12 h-12 bg-accent rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 group">
+                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                </a>
+                <div class="absolute left-16 top-1/2 transform -translate-y-1/2 bg-black/80 text-white text-sm px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
+                    Download Cover Letter
+                </div>
+            </div>
+        </div>
+
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 opacity-10 bg-elements">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-primary rounded-full blur-xl animate-pulse"></div>
+            <div class="absolute top-40 right-20 w-24 h-24 bg-secondary rounded-full blur-xl animate-pulse delay-1000"></div>
+            <div class="absolute bottom-40 left-1/3 w-40 h-40 bg-accent rounded-full blur-xl animate-pulse delay-2000"></div>
+        </div>
+
+        <!-- Header Section -->
+        <header class="relative z-10">
+            <div class="max-w-6xl mx-auto px-6 py-16">
+                <div class="text-center">
+                    <!-- Profile Photo Placeholder -->
+                    <div class="w-32 h-32 mx-auto mb-8 gradient-bg rounded-full flex items-center justify-center shadow-2xl">
+                        <span class="text-4xl font-bold text-white">MG</span>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-7xl font-black gradient-text mb-4 tracking-tight">
+                        Müslüm GÜZEL
+                    </h1>
+                    <div class="text-2xl md:text-3xl text-gray-300 font-light mb-2">Software Developer</div>
+                    <div class="text-lg text-primary mb-8 flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        </svg>
+                        Istanbul, Turkey
+                    </div>
+                    
+                    <!-- Contact Information -->
+                    <div class="flex flex-col lg:flex-row justify-center items-center space-y-4 lg:space-y-0 lg:space-x-8 mb-10">
+                        <a href="mailto:guzel.muslum8@gmail.com" class="group flex items-center space-x-2 text-gray-300 hover:text-primary transition-all duration-300 hover:scale-105">
+                            <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center group-hover:shadow-lg">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                                </svg>
+                            </div>
+                            <span>guzel.muslum8@gmail.com</span>
+                        </a>
+                        <a href="https://linkedin.com/in/müslüm-güzel-2b60037a" target="_blank" rel="noopener" class="group flex items-center space-x-2 text-gray-300 hover:text-secondary transition-all duration-300 hover:scale-105">
+                            <div class="w-10 h-10 bg-secondary rounded-full flex items-center justify-center group-hover:shadow-lg">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </div>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Mobile Download Buttons -->
+                    <div class="flex md:hidden justify-center space-x-4 mt-8">
+                        <a href="/Muslum%20GUZEL-CV.pdf" download class="flex items-center justify-center w-12 h-12 gradient-bg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                            <span class="text-white text-xs font-bold">PDF</span>
+                        </a>
+                        <a href="/Muslum%20GUZEL-CV-F.pdf" download class="flex items-center justify-center w-12 h-12 bg-secondary rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                            <span class="text-white text-xs font-bold">DOC</span>
+                        </a>
+                        <a href="/Cover%20Letter.docx" download class="flex items-center justify-center w-12 h-12 bg-accent rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="relative z-10 max-w-7xl mx-auto px-6 py-16">
+            <!-- About Me Section -->
+            <section class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold gradient-text mb-4">About Me</h2>
+                    <div class="w-24 h-1 gradient-border mx-auto rounded-full"></div>
+                </div>
+                <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl hover:shadow-cyan-500/10 transition-all duration-500 hover:transform hover:scale-[1.02]">
+                    <p class="text-lg text-gray-200 leading-relaxed text-center">
+                        I am a computer engineer with experience as a software developer at leading Turkish companies like <span class="text-primary font-semibold">Turkcell Technology</span> and <span class="text-secondary font-semibold">Turkish Airlines Technology</span>. I have expertise in <span class="text-accent font-semibold">.NET, React, SQL</span> and integration systems. I am open to new technologies, problem-solving oriented, and work with high motivation.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold gradient-text mb-4">Education</h2>
+                    <div class="w-24 h-1 gradient-border mx-auto rounded-full"></div>
+                </div>
+                <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl hover:shadow-green-500/10 transition-all duration-500 hover:transform hover:scale-[1.02]">
+                    <div class="text-center">
+                        <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Trakya University</h3>
+                        <p class="text-primary text-xl font-semibold mb-2">Computer Engineering</p>
+                        <p class="text-gray-300">Bachelor's Degree</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold gradient-text mb-4">Work Experience</h2>
+                    <div class="w-24 h-1 gradient-border mx-auto rounded-full"></div>
+                </div>
+                
+                <!-- Timeline -->
+                <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-1/2 transform -translate-x-px h-full w-0.5 gradient-border"></div>
+                    
+                    <!-- Turkish Airlines Technic -->
+                    <div class="relative flex items-center mb-16">
+                        <div class="flex-1 pr-8">
+                            <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-blue-500/10 transition-all duration-500 hover:transform hover:scale-105">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-white">Turkish Airlines Technic</h3>
+                                        <p class="text-blue-400 font-semibold">Software Developer</p>
+                                    </div>
+                                </div>
+                                <div class="text-gray-300 text-sm mb-3 flex items-center">
+                                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                                    </svg>
+                                    October 2020 – Present
+                                </div>
+                                <ul class="text-gray-200 space-y-2">
+                                    <li class="flex items-start">
+                                        <span class="text-green-400 mr-2">✓</span>
+                                        Developing modern web applications using React (React Admin) and .NET Core technologies
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-400 mr-2">✓</span>
+                                        New feature development, refactoring, performance optimizations
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Timeline Dot -->
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-slate-900"></div>
+                        <div class="flex-1 pl-8"></div>
+                    </div>
+
+                    <!-- Turkcell Teknoloji -->
+                    <div class="relative flex items-center mb-16">
+                        <div class="flex-1 pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full border-4 border-slate-900"></div>
+                        <div class="flex-1 pl-8">
+                            <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:transform hover:scale-105">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-white">Turkcell Teknoloji</h3>
+                                        <p class="text-purple-400 font-semibold">Software Developer</p>
+                                    </div>
+                                </div>
+                                <div class="text-gray-300 text-sm mb-3 flex items-center">
+                                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                                    </svg>
+                                    February 2019 – October 2020
+                                </div>
+                                <ul class="text-gray-200 space-y-2">
+                                    <li class="flex items-start">
+                                        <span class="text-green-400 mr-2">✓</span>
+                                        Web application development using KnockoutJS and Entity Framework
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-400 mr-2">✓</span>
+                                        Working on the ONENT project
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RDC-Turkcell -->
+                    <div class="relative flex items-center mb-16">
+                        <div class="flex-1 pr-8">
+                            <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-pink-500/10 transition-all duration-500 hover:transform hover:scale-105">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-white">RDC-Turkcell</h3>
+                                        <p class="text-pink-400 font-semibold">Software Developer</p>
+                                    </div>
+                                </div>
+                                <div class="text-gray-300 text-sm mb-3 flex items-center">
+                                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                                    </svg>
+                                    2018 – 2019
+                                </div>
+                                <ul class="text-gray-200 space-y-2">
+                                    <li class="flex items-start">
+                                        <span class="text-green-400 mr-2">✓</span>
+                                        Development and support in enterprise web solutions
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-pink-500 rounded-full border-4 border-slate-900"></div>
+                        <div class="flex-1 pl-8"></div>
+                    </div>
+
+                    <!-- Vizyoneks -->
+                    <div class="relative flex items-center mb-16">
+                        <div class="flex-1 pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-orange-500 rounded-full border-4 border-slate-900"></div>
+                        <div class="flex-1 pl-8">
+                            <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:transform hover:scale-105">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-white">Vizyoneks</h3>
+                                        <p class="text-orange-400 font-semibold">Software Developer</p>
+                                    </div>
+                                </div>
+                                <div class="text-gray-300 text-sm mb-3 flex items-center">
+                                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                                    </svg>
+                                    2015 – 2018
+                                </div>
+                                <ul class="text-gray-200 space-y-2">
+                                    <li class="flex items-start">
+                                        <span class="text-green-400 mr-2">✓</span>
+                                        Ext.NET + ASP.NET Web Forms applications
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-400 mr-2">✓</span>
+                                        Oracle database operations
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DDI & Dream R&D -->
+                    <div class="relative flex items-center mb-8">
+                        <div class="flex-1 pr-8">
+                            <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-teal-500/10 transition-all duration-500 hover:transform hover:scale-105">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-white">DDI & Dream R&D</h3>
+                                        <p class="text-teal-400 font-semibold">Software Developer</p>
+                                    </div>
+                                </div>
+                                <div class="text-gray-300 text-sm mb-3 flex items-center">
+                                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                                    </svg>
+                                    2013 – 2015
+                                </div>
+                                <ul class="text-gray-200 space-y-2">
+                                    <li class="flex items-start">
+                                        <span class="text-green-400 mr-2">✓</span>
+                                        WCF integrations, KOFAX, jQuery-based developments
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-teal-500 rounded-full border-4 border-slate-900"></div>
+                        <div class="flex-1 pl-8"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400 mb-4">Technical Skills</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-orange-500 to-amber-500 mx-auto rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    <!-- Backend -->
+                    <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-blue-500/10 transition-all duration-500 hover:transform hover:scale-105">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold text-white">Backend</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-blue-500/30 transition-colors">.NET Core</span>
+                            <span class="bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-blue-500/30 transition-colors">C#</span>
+                            <span class="bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-blue-500/30 transition-colors">Entity Framework</span>
+                            <span class="bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-blue-500/30 transition-colors">REST API</span>
+                            <span class="bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-blue-500/30 transition-colors">WebAPI</span>
+                        </div>
+                    </div>
+
+                    <!-- Frontend -->
+                    <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-green-500/10 transition-all duration-500 hover:transform hover:scale-105">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold text-white">Frontend</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-green-500/20 border border-green-400/30 text-green-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-green-500/30 transition-colors">React</span>
+                            <span class="bg-green-500/20 border border-green-400/30 text-green-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-green-500/30 transition-colors">React Native</span>
+                            <span class="bg-green-500/20 border border-green-400/30 text-green-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-green-500/30 transition-colors">jQuery</span>
+                            <span class="bg-green-500/20 border border-green-400/30 text-green-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-green-500/30 transition-colors">KnockoutJS</span>
+                        </div>
+                    </div>
+
+                    <!-- Database -->
+                    <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-purple-500/10 transition-all duration-500 hover:transform hover:scale-105">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />
+                                    <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z" />
+                                    <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z" />
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold text-white">Database</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-purple-500/20 border border-purple-400/30 text-purple-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-purple-500/30 transition-colors">Oracle</span>
+                            <span class="bg-purple-500/20 border border-purple-400/30 text-purple-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-purple-500/30 transition-colors">SQL Server</span>
+                            <span class="bg-purple-500/20 border border-purple-400/30 text-purple-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-purple-500/30 transition-colors">PL/SQL</span>
+                        </div>
+                    </div>
+
+                    <!-- DevOps & Tools -->
+                    <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-orange-500/10 transition-all duration-500 hover:transform hover:scale-105">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold text-white">DevOps & Tools</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-orange-500/20 border border-orange-400/30 text-orange-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-orange-500/30 transition-colors">CI/CD</span>
+                            <span class="bg-orange-500/20 border border-orange-400/30 text-orange-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-orange-500/30 transition-colors">Linux</span>
+                            <span class="bg-orange-500/20 border border-orange-400/30 text-orange-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-orange-500/30 transition-colors">Git</span>
+                            <span class="bg-orange-500/20 border border-orange-400/30 text-orange-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-orange-500/30 transition-colors">TFS</span>
+                            <span class="bg-orange-500/20 border border-orange-400/30 text-orange-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-orange-500/30 transition-colors">JIRA</span>
+                        </div>
+                    </div>
+
+                    <!-- Architecture & Services -->
+                    <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-6 shadow-xl hover:shadow-red-500/10 transition-all duration-500 hover:transform hover:scale-105">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                                </svg>
+                            </div>
+                            <h4 class="text-xl font-bold text-white">Architecture & Services</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-red-500/20 border border-red-400/30 text-red-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-red-500/30 transition-colors">SOA</span>
+                            <span class="bg-red-500/20 border border-red-400/30 text-red-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-red-500/30 transition-colors">MVC</span>
+                            <span class="bg-red-500/20 border border-red-400/30 text-red-300 text-sm px-4 py-2 rounded-full font-medium hover:bg-red-500/30 transition-colors">WCF</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Languages & References -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+                <!-- Languages Section -->
+                <section>
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400 mb-4">Languages</h2>
+                        <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-cyan-500 mx-auto rounded-full"></div>
+                    </div>
+                    <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-8 shadow-xl hover:shadow-indigo-500/10 transition-all duration-500 hover:transform hover:scale-105">
+                        <div class="space-y-6">
+                            <div class="flex justify-between items-center p-4 bg-white/5 rounded-2xl">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center mr-4">
+                                        <span class="text-white text-sm font-bold">TR</span>
+                                    </div>
+                                    <span class="text-xl font-semibold text-white">Turkish</span>
+                                </div>
+                                <span class="text-indigo-400 font-medium">Native</span>
+                            </div>
+                            <div class="flex justify-between items-center p-4 bg-white/5 rounded-2xl">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mr-4">
+                                        <span class="text-white text-sm font-bold">EN</span>
+                                    </div>
+                                    <span class="text-xl font-semibold text-white">English</span>
+                                </div>
+                                <span class="text-cyan-400 font-medium">Advanced</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- References Section -->
+                <section>
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-rose-400 mb-4">References</h2>
+                        <div class="w-16 h-1 bg-gradient-to-r from-pink-500 to-rose-500 mx-auto rounded-full"></div>
+                    </div>
+                    <div class="backdrop-blur-lg bg-white/10 border border-white/20 rounded-3xl p-8 shadow-xl hover:shadow-pink-500/10 transition-all duration-500 hover:transform hover:scale-105 flex items-center justify-center min-h-[200px]">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <p class="text-gray-300 text-lg italic">Available upon request.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="relative z-10 bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 border-t border-white/10">
+            <div class="max-w-6xl mx-auto px-6 py-12 text-center">
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-2">Müslüm GÜZEL</h3>
+                    <p class="text-gray-400">Software Developer</p>
+                </div>
+                <div class="border-t border-white/10 pt-6">
+                    <p class="text-gray-500">© 2024 Müslüm GÜZEL. All rights reserved.</p>
+                    <p class="text-gray-600 text-sm mt-2">muslumguzel.com</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // Theme switching functionality
+        const themeSelector = document.getElementById('themeSelector');
+        const body = document.body;
+        
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'oceanic';
+        body.className = `theme-${savedTheme} min-h-screen text-white antialiased`;
+        themeSelector.value = savedTheme;
+        
+        // Handle theme change
+        themeSelector.addEventListener('change', function() {
+            const newTheme = this.value;
+            body.className = `theme-${newTheme} min-h-screen text-white antialiased`;
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+</html>
