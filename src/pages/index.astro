@@ -340,9 +340,8 @@ const description = "Experienced Software Developer specializing in .NET, React,
 <body class="theme-oceanic min-h-screen text-white antialiased">
     <div class="min-h-screen relative overflow-hidden">
         <!-- Theme Selector -->
-        <div class="fixed top-6 right-6 z-50">
+        <!-- <div class="fixed top-6 right-6 z-50">
             <select id="themeSelector" class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl px-4 py-2 text-white text-sm font-medium focus:outline-none focus:ring-2 focus:ring-white/30 cursor-pointer">
-                <!-- Trust & Professional Themes (Psychology-Based) -->
                 <option value="corporate">🏢 Corporate Blue</option>
                 <option value="navy">⚓ Navy Trust</option>
                 <option value="trustworthy">🤝 Trustworthy</option>
@@ -350,7 +349,6 @@ const description = "Experienced Software Developer specializing in .NET, React,
                 <option value="financial">🏦 Financial</option>
                 <option value="professional">⭐ Professional</option>
                 
-                <!-- Original Themes -->
                 <option value="oceanic">🌊 Oceanic</option>
                 <option value="sunset">🌅 Sunset</option>
                 <option value="forest">🌲 Forest</option>
@@ -358,7 +356,6 @@ const description = "Experienced Software Developer specializing in .NET, React,
                 <option value="neon">⚡ Neon</option>
                 <option value="minimal">⚪ Minimal</option>
                 
-                <!-- Pastel Themes -->
                 <option value="lavender">🌸 Lavender</option>
                 <option value="sage">🍃 Sage</option>
                 <option value="rose">🌹 Rose</option>
@@ -368,7 +365,7 @@ const description = "Experienced Software Developer specializing in .NET, React,
                 <option value="cream">🤍 Cream</option>
                 <option value="light">☀️ Light Mode</option>
             </select>
-        </div>
+        </div> -->
 
         <!-- Download Buttons - Left Side -->
         <div class="fixed left-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col space-y-3 hidden md:flex">
@@ -858,7 +855,7 @@ const description = "Experienced Software Developer specializing in .NET, React,
                     <p class="text-gray-400">Software Developer</p>
                 </div>
                 <div class="border-t border-white/10 pt-6">
-                    <p class="text-gray-500">© 2024 Müslüm GÜZEL. All rights reserved.</p>
+                    <p class="text-gray-500">© {new Date().getFullYear()} Müslüm GÜZEL. All rights reserved.</p>
                     <p class="text-gray-600 text-sm mt-2">muslumguzel.com</p>
                 </div>
             </div>
@@ -867,20 +864,24 @@ const description = "Experienced Software Developer specializing in .NET, React,
     
     <script>
         // Theme switching functionality
-        const themeSelector = document.getElementById('themeSelector');
+        const themeSelector = document.getElementById('themeSelector') as HTMLSelectElement | null;
         const body = document.body;
         
         // Load saved theme
         const savedTheme = localStorage.getItem('theme') || 'oceanic';
         body.className = `theme-${savedTheme} min-h-screen text-white antialiased`;
-        themeSelector.value = savedTheme;
+        if (themeSelector) {
+            themeSelector.value = savedTheme;
+        }
         
         // Handle theme change
-        themeSelector.addEventListener('change', function() {
-            const newTheme = this.value;
-            body.className = `theme-${newTheme} min-h-screen text-white antialiased`;
-            localStorage.setItem('theme', newTheme);
-        });
+        if (themeSelector) {
+            themeSelector.addEventListener('change', function() {
+                const newTheme = (this as HTMLSelectElement).value;
+                body.className = `theme-${newTheme} min-h-screen text-white antialiased`;
+                localStorage.setItem('theme', newTheme);
+            });
+        }
     </script>
 </body>
 </html>
