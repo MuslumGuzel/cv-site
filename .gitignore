@@ -1,0 +1,40 @@
+# Node.js bağımlılıkları
+node_modules/
+
+# Derlenmiş çıktılar (build)
+dist/
+build/
+.out/
+
+# Astro özel
+.astro/
+
+# Log dosyaları
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Bağımlılık yöneticisi kilit dosyaları (opsiyonel olarak ignore edilebilir)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Ortam değişkenleri
+.env
+.env.local
+.env.*.local
+
+# IDE / Editör dosyaları
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS tarafından oluşturulan dosyalar
+.DS_Store
+Thumbs.db
+
+# Test çıktıları
+coverage/
