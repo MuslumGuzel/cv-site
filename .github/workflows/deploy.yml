@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [ portfolio-cv ]
   workflow_dispatch:
 
 jobs:
@@ -27,4 +27,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
-          branch: master
+          branch: portfolio-cv
