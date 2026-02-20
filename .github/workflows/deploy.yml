@@ -23,8 +23,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Verify public folder does not contain sensitive documents
+        run: npm run check:no-sensitive-docs
+
       - name: Build
         run: npm run build
+
+      - name: Verify build output does not contain sensitive documents
+        run: node scripts/check-no-sensitive-docs.mjs dist
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4

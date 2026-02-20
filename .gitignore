@@ -38,3 +38,10 @@ Thumbs.db
 
 # Test çıktıları
 coverage/
+
+# Public klasöründe hassas dokümanları izleme
+public/*.pdf
+public/*.doc
+public/*.docx
+public/*.odt
+public/*.rtf
