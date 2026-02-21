@@ -1,47 +1,124 @@
 ---
 import '../styles/global.css';
 
-const profile = {
-  name: 'Müslüm GÜZEL',
-  role: 'Software Developer',
-  summary:
-    'Kurumsal uygulamalar ve entegrasyon katmanlarında .NET, React, Go ve API tabanlı sistemlerle çalışıyorum.',
-  whatIDo:
-    'Sade ve sürdürülebilir yazılım geliştirme yaklaşımıyla backend, frontend ve AI destekli entegrasyon akışlarında üretim yapıyorum.',
-  stack: [
-    '.NET Core / C#',
-    'React',
-    'Go',
-    'REST API',
-    'MCP / LLM Integrations',
-    'CI/CD',
-    'Azure DevOps',
-    'Jira / Confluence',
-    'SonarQube',
-    'GitHub Copilot',
-  ],
-  links: [
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a' },
-    { label: 'GitHub', href: 'https://github.com/muslumguzel' },
-    { label: 'Medium', href: 'https://medium.com/@muslumguzel' },
-  ],
+const translations = {
+  tr: {
+    meta: {
+      title: 'Müslüm GÜZEL · Software Developer',
+      description: 'Sade teknik profil: isim, meslek, ne iş yaptığı ve tech stack.',
+    },
+    role: 'Software Developer',
+    heroSub: '.NET Core | React | Go | API Entegrasyonları',
+    aboutTitle: 'Ne İş Yapıyorum',
+    summary:
+      'Kurumsal uygulamalar ve entegrasyon katmanlarında .NET, React, Go ve API tabanlı sistemlerle çalışıyorum.',
+    whatIDo:
+      'Sade ve sürdürülebilir yazılım geliştirme yaklaşımıyla backend, frontend ve AI destekli entegrasyon akışlarında üretim yapıyorum.',
+    stackTitle: 'Tech Stack',
+    stack: [
+      '.NET Core / C#',
+      'React',
+      'Go',
+      'REST API',
+      'MCP / LLM Integrations',
+      'CI/CD',
+      'Azure DevOps',
+      'Jira / Confluence',
+      'SonarQube',
+      'GitHub Copilot',
+    ],
+    linksTitle: 'Bağlantılar',
+    links: [
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a' },
+      { label: 'GitHub', href: 'https://github.com/muslumguzel' },
+      { label: 'Medium', href: 'https://medium.com/@muslumguzel' },
+    ],
+  },
+  en: {
+    meta: {
+      title: 'Muslum Guzel · Software Developer',
+      description: 'Minimal technical profile with role, focus, and tech stack.',
+    },
+    role: 'Software Developer',
+    heroSub: '.NET Core | React | Go | API Integrations',
+    aboutTitle: 'What I Do',
+    summary:
+      'I work on enterprise applications and integration layers using .NET, React, Go, and API-driven systems.',
+    whatIDo:
+      'I focus on maintainable software delivery across backend, frontend, and AI-assisted integration flows.',
+    stackTitle: 'Tech Stack',
+    stack: [
+      '.NET Core / C#',
+      'React',
+      'Go',
+      'REST API',
+      'MCP / LLM Integrations',
+      'CI/CD',
+      'Azure DevOps',
+      'Jira / Confluence',
+      'SonarQube',
+      'GitHub Copilot',
+    ],
+    linksTitle: 'Links',
+    links: [
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a' },
+      { label: 'GitHub', href: 'https://github.com/muslumguzel' },
+      { label: 'Medium', href: 'https://medium.com/@muslumguzel' },
+    ],
+  },
+  de: {
+    meta: {
+      title: 'Muslum Guzel · Softwareentwickler',
+      description: 'Minimales technisches Profil mit Rolle, Fokus und Tech-Stack.',
+    },
+    role: 'Softwareentwickler',
+    heroSub: '.NET Core | React | Go | API-Integrationen',
+    aboutTitle: 'Was Ich Mache',
+    summary:
+      'Ich arbeite an Enterprise-Anwendungen und Integrationsschichten mit .NET, React, Go und API-basierten Systemen.',
+    whatIDo:
+      'Mein Fokus liegt auf wartbarer Umsetzung in Backend-, Frontend- und KI-gestützten Integrationsabläufen.',
+    stackTitle: 'Tech Stack',
+    stack: [
+      '.NET Core / C#',
+      'React',
+      'Go',
+      'REST API',
+      'MCP / LLM Integrations',
+      'CI/CD',
+      'Azure DevOps',
+      'Jira / Confluence',
+      'SonarQube',
+      'GitHub Copilot',
+    ],
+    linksTitle: 'Links',
+    links: [
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a' },
+      { label: 'GitHub', href: 'https://github.com/muslumguzel' },
+      { label: 'Medium', href: 'https://medium.com/@muslumguzel' },
+    ],
+  },
 };
 
+const defaultLang = 'tr';
+const initial = translations[defaultLang];
+const profileName = 'Müslüm GÜZEL';
+
 const meta = {
-  title: 'Müslüm GÜZEL · Software Developer',
-  description: 'Sade teknik profil: isim, meslek, ne iş yaptığı ve tech stack.',
+  title: initial.meta.title,
+  description: initial.meta.description,
   url: 'https://muslumguzel.com',
 };
 ---
 
 <!DOCTYPE html>
-<html lang="tr">
+<html lang={defaultLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{meta.title}</title>
     <meta name="description" content={meta.description} />
-    <meta name="author" content={profile.name} />
+    <meta name="author" content={profileName} />
     <meta name="keywords" content=".NET, React, Go, MCP, software developer" />
     <link rel="canonical" href={meta.url} />
     <link rel="icon" type="image/svg+xml" href="/cv-site/favicon.svg" />
@@ -109,13 +186,38 @@ const meta = {
       .menu {
         position: absolute;
         right: 28px;
-        top: 22px;
-        color: rgba(238, 245, 249, 0.9);
-        letter-spacing: 0.28em;
-        font-size: 0.76rem;
+        top: 20px;
+        z-index: 4;
+      }
+
+      .lang-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        border: 1px solid rgba(238, 245, 249, 0.35);
+        border-radius: 999px;
+        padding: 4px;
+        background: rgba(10, 24, 37, 0.32);
+        backdrop-filter: blur(4px);
+      }
+
+      .lang-btn {
+        appearance: none;
+        border: 0;
+        background: transparent;
+        color: rgba(236, 244, 248, 0.86);
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
         font-weight: 700;
-        z-index: 3;
+        border-radius: 999px;
+        padding: 7px 10px;
+        cursor: pointer;
+      }
+
+      .lang-btn.is-active {
+        background: rgba(244, 249, 252, 0.96);
+        color: #15222b;
       }
 
       .hero-center {
@@ -240,6 +342,11 @@ const meta = {
           min-height: 72vh;
         }
 
+        .menu {
+          right: 14px;
+          top: 14px;
+        }
+
         .content {
           margin-top: -58px;
           padding: 0 14px;
@@ -251,45 +358,260 @@ const meta = {
       }
     </style>
   </head>
-  <body>
+  <body data-active-lang={defaultLang}>
     <section class="hero" id="home">
-      <span class="menu">Menu</span>
+      <div class="menu">
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <button type="button" class="lang-btn is-active" data-language-option="tr" aria-pressed="true">TR</button>
+          <button type="button" class="lang-btn" data-language-option="en" aria-pressed="false">EN</button>
+          <button type="button" class="lang-btn" data-language-option="de" aria-pressed="false">DE</button>
+        </div>
+      </div>
 
       <div class="hero-center">
         <div>
-          <p class="role">{profile.role}</p>
+          <p class="role" id="role-text">{initial.role}</p>
           <div class="title-wrap">
-            <h1>{profile.name}</h1>
+            <h1>{profileName}</h1>
           </div>
-          <p class="hero-sub">.NET Core | React | Go | API Integrations</p>
+          <p class="hero-sub" id="hero-sub-text">{initial.heroSub}</p>
         </div>
       </div>
     </section>
 
     <main class="content">
       <section class="card" id="about">
-        <h2>Ne İş Yapıyorum</h2>
-        <p>{profile.summary}</p>
-        <p style="margin-top: 10px;">{profile.whatIDo}</p>
+        <h2 id="about-title-text">{initial.aboutTitle}</h2>
+        <p id="summary-text">{initial.summary}</p>
+        <p id="what-i-do-text" style="margin-top: 10px;">{initial.whatIDo}</p>
       </section>
 
       <section class="card" id="stack">
-        <h2>Tech Stack</h2>
-        <ul class="stack">
-          {profile.stack.map((item) => (
+        <h2 id="stack-title-text">{initial.stackTitle}</h2>
+        <ul class="stack" id="stack-list">
+          {initial.stack.map((item) => (
             <li>{item}</li>
           ))}
         </ul>
       </section>
 
       <section class="card" id="contact">
-        <h2>Bağlantılar</h2>
-        <div class="links">
-          {profile.links.map((link) => (
+        <h2 id="links-title-text">{initial.linksTitle}</h2>
+        <div class="links" id="links-list">
+          {initial.links.map((link) => (
             <a href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
           ))}
         </div>
       </section>
     </main>
+
+    <script is:inline>
+      const TRANSLATIONS = {
+        tr: {
+          meta: {
+            title: 'Müslüm GÜZEL · Software Developer',
+            description: 'Sade teknik profil: isim, meslek, ne iş yaptığı ve tech stack.',
+          },
+          role: 'Software Developer',
+          heroSub: '.NET Core | React | Go | API Entegrasyonları',
+          aboutTitle: 'Ne İş Yapıyorum',
+          summary:
+            'Kurumsal uygulamalar ve entegrasyon katmanlarında .NET, React, Go ve API tabanlı sistemlerle çalışıyorum.',
+          whatIDo:
+            'Sade ve sürdürülebilir yazılım geliştirme yaklaşımıyla backend, frontend ve AI destekli entegrasyon akışlarında üretim yapıyorum.',
+          stackTitle: 'Tech Stack',
+          stack: [
+            '.NET Core / C#',
+            'React',
+            'Go',
+            'REST API',
+            'MCP / LLM Integrations',
+            'CI/CD',
+            'Azure DevOps',
+            'Jira / Confluence',
+            'SonarQube',
+            'GitHub Copilot',
+          ],
+          linksTitle: 'Bağlantılar',
+          links: [
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a' },
+            { label: 'GitHub', href: 'https://github.com/muslumguzel' },
+            { label: 'Medium', href: 'https://medium.com/@muslumguzel' },
+          ],
+        },
+        en: {
+          meta: {
+            title: 'Muslum Guzel · Software Developer',
+            description: 'Minimal technical profile with role, focus, and tech stack.',
+          },
+          role: 'Software Developer',
+          heroSub: '.NET Core | React | Go | API Integrations',
+          aboutTitle: 'What I Do',
+          summary:
+            'I work on enterprise applications and integration layers using .NET, React, Go, and API-driven systems.',
+          whatIDo:
+            'I focus on maintainable software delivery across backend, frontend, and AI-assisted integration flows.',
+          stackTitle: 'Tech Stack',
+          stack: [
+            '.NET Core / C#',
+            'React',
+            'Go',
+            'REST API',
+            'MCP / LLM Integrations',
+            'CI/CD',
+            'Azure DevOps',
+            'Jira / Confluence',
+            'SonarQube',
+            'GitHub Copilot',
+          ],
+          linksTitle: 'Links',
+          links: [
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a' },
+            { label: 'GitHub', href: 'https://github.com/muslumguzel' },
+            { label: 'Medium', href: 'https://medium.com/@muslumguzel' },
+          ],
+        },
+        de: {
+          meta: {
+            title: 'Muslum Guzel · Softwareentwickler',
+            description: 'Minimales technisches Profil mit Rolle, Fokus und Tech-Stack.',
+          },
+          role: 'Softwareentwickler',
+          heroSub: '.NET Core | React | Go | API-Integrationen',
+          aboutTitle: 'Was Ich Mache',
+          summary:
+            'Ich arbeite an Enterprise-Anwendungen und Integrationsschichten mit .NET, React, Go und API-basierten Systemen.',
+          whatIDo:
+            'Mein Fokus liegt auf wartbarer Umsetzung in Backend-, Frontend- und KI-gestützten Integrationsabläufen.',
+          stackTitle: 'Tech Stack',
+          stack: [
+            '.NET Core / C#',
+            'React',
+            'Go',
+            'REST API',
+            'MCP / LLM Integrations',
+            'CI/CD',
+            'Azure DevOps',
+            'Jira / Confluence',
+            'SonarQube',
+            'GitHub Copilot',
+          ],
+          linksTitle: 'Links',
+          links: [
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a' },
+            { label: 'GitHub', href: 'https://github.com/muslumguzel' },
+            { label: 'Medium', href: 'https://medium.com/@muslumguzel' },
+          ],
+        },
+      };
+
+      const SUPPORTED_LANGS = ['tr', 'en', 'de'];
+      const roleText = document.getElementById('role-text');
+      const heroSubText = document.getElementById('hero-sub-text');
+      const aboutTitleText = document.getElementById('about-title-text');
+      const summaryText = document.getElementById('summary-text');
+      const whatIDoText = document.getElementById('what-i-do-text');
+      const stackTitleText = document.getElementById('stack-title-text');
+      const stackList = document.getElementById('stack-list');
+      const linksTitleText = document.getElementById('links-title-text');
+      const linksList = document.getElementById('links-list');
+      const languageButtons = document.querySelectorAll('[data-language-option]');
+      const titleElement = document.querySelector('title');
+      const descriptionElement = document.querySelector('meta[name="description"]');
+
+      function renderStack(items) {
+        stackList.replaceChildren();
+        for (let i = 0; i < items.length; i += 1) {
+          const li = document.createElement('li');
+          li.textContent = items[i];
+          stackList.appendChild(li);
+        }
+      }
+
+      function renderLinks(items) {
+        linksList.replaceChildren();
+        for (let i = 0; i < items.length; i += 1) {
+          const link = items[i];
+          const anchor = document.createElement('a');
+          anchor.href = link.href;
+          anchor.textContent = link.label;
+          anchor.target = '_blank';
+          anchor.rel = 'noreferrer';
+          linksList.appendChild(anchor);
+        }
+      }
+
+      function updateLanguageButtons(activeLang) {
+        for (let i = 0; i < languageButtons.length; i += 1) {
+          const button = languageButtons[i];
+          const lang = button.getAttribute('data-language-option');
+          const isActive = lang === activeLang;
+          button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+          button.classList.toggle('is-active', isActive);
+        }
+      }
+
+      function applyLanguage(lang) {
+        const content = TRANSLATIONS[lang] || TRANSLATIONS.tr;
+
+        roleText.textContent = content.role;
+        heroSubText.textContent = content.heroSub;
+        aboutTitleText.textContent = content.aboutTitle;
+        summaryText.textContent = content.summary;
+        whatIDoText.textContent = content.whatIDo;
+        stackTitleText.textContent = content.stackTitle;
+        linksTitleText.textContent = content.linksTitle;
+
+        renderStack(content.stack);
+        renderLinks(content.links);
+
+        titleElement.textContent = content.meta.title;
+        descriptionElement.setAttribute('content', content.meta.description);
+
+        document.documentElement.lang = lang;
+        document.body.dataset.activeLang = lang;
+        updateLanguageButtons(lang);
+        localStorage.setItem('preferredLang', lang);
+      }
+
+      function detectBrowserLanguage() {
+        const candidates = [];
+        if (Array.isArray(navigator.languages)) {
+          candidates.push(...navigator.languages);
+        }
+        if (navigator.language) {
+          candidates.push(navigator.language);
+        }
+
+        for (let i = 0; i < candidates.length; i += 1) {
+          const value = candidates[i];
+          if (!value) continue;
+          const lower = value.toLowerCase();
+          if (lower.indexOf('tr') === 0) return 'tr';
+          if (lower.indexOf('de') === 0) return 'de';
+          if (lower.indexOf('en') === 0) return 'en';
+        }
+
+        return 'tr';
+      }
+
+      function initialiseLanguage() {
+        const stored = localStorage.getItem('preferredLang');
+        const startLang = SUPPORTED_LANGS.indexOf(stored) !== -1 ? stored : detectBrowserLanguage();
+        applyLanguage(startLang);
+
+        for (let i = 0; i < languageButtons.length; i += 1) {
+          const button = languageButtons[i];
+          button.addEventListener('click', function (event) {
+            const selected = event.currentTarget.getAttribute('data-language-option');
+            if (SUPPORTED_LANGS.indexOf(selected) === -1) return;
+            if (selected === document.body.dataset.activeLang) return;
+            applyLanguage(selected);
+          });
+        }
+      }
+
+      initialiseLanguage();
+    </script>
   </body>
 </html>
