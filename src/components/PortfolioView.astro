@@ -2,20 +2,21 @@
 const { content, lang } = Astro.props;
 const {
   hero,
-  metrics,
-  aside,
-  experienceSection,
-  experiences,
-  projectsSection,
-  projects,
-  skillsSection,
-  skillGroups,
-  contactSection,
+  aboutSection,
+  aboutHighlights,
+  stackSection,
+  stackGroups,
+  recentSection,
+  recentHighlights,
+  infoSection,
+  infoHighlights,
+  linksSection,
   socialLinks,
   languageOptions,
 } = content;
-const contactHref = contactSection.contactHref;
-const contactExternal = contactSection.contactExternal === true;
+
+const contactHref = linksSection.contactHref;
+const contactExternal = linksSection.contactExternal === true;
 ---
 
 <div class="portfolio-view relative" data-view={lang} data-lang={lang}>
@@ -31,12 +32,15 @@ const contactExternal = contactSection.contactExternal === true;
         <span class="inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
         Müslüm GÜZEL
       </a>
-      <nav class="hidden items-center gap-10 text-sm text-slate-300 md:flex">
-        <a href="#work" class="transition hover:text-white">{experienceSection.navLabel}</a>
-        <a href="#projects" class="transition hover:text-white">{projectsSection.navLabel}</a>
-        <a href="#skills" class="transition hover:text-white">{skillsSection.navLabel}</a>
-        <a href="#contact" class="transition hover:text-white">{contactSection.navLabel}</a>
+
+      <nav class="hidden items-center gap-8 text-sm text-slate-300 md:flex">
+        <a href="#about" class="transition hover:text-white">{aboutSection.navLabel}</a>
+        <a href="#stack" class="transition hover:text-white">{stackSection.navLabel}</a>
+        <a href="#recent" class="transition hover:text-white">{recentSection.navLabel}</a>
+        <a href="#info" class="transition hover:text-white">{infoSection.navLabel}</a>
+        <a href="#links" class="transition hover:text-white">{linksSection.navLabel}</a>
       </nav>
+
       <div class="flex items-center gap-3">
         <a
           href={contactHref}
@@ -44,10 +48,11 @@ const contactExternal = contactSection.contactExternal === true;
           target={contactExternal ? '_blank' : undefined}
           rel={contactExternal ? 'noreferrer' : undefined}
         >
-          {contactSection.headerCta}
+          {linksSection.headerCta}
         </a>
+
         <div class="language-switcher inline-flex items-center gap-1 rounded-full border border-white/15 bg-slate-950/60 p-1 shadow-[0_20px_60px_-40px_rgba(20,184,166,0.4)]">
-          <span class="sr-only">{contactSection.languageLabel}</span>
+          <span class="sr-only">{linksSection.languageLabel}</span>
           {languageOptions.map((option) => (
             <button
               type="button"
@@ -66,26 +71,29 @@ const contactExternal = contactSection.contactExternal === true;
   </header>
 
   <main class="mx-auto max-w-6xl px-6 pb-24 pt-16 md:pt-24">
-    <section id="hero" class="mb-24 grid gap-12 md:grid-cols-[3fr_2fr] md:items-center">
+    <section id="hero" class="mb-20 grid gap-10 md:grid-cols-[3fr_2fr] md:items-center">
       <div>
         <div class="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-slate-200">
           {hero.roleLabel}
         </div>
+
         <h1 class="text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl">
           {hero.title}
         </h1>
+
         <p class="mt-6 max-w-2xl text-lg text-slate-300 md:text-xl">
           {hero.subtitle}
         </p>
 
         <div class="mt-8 flex flex-wrap items-center gap-4">
           <a
-            href="#work"
+            href="#stack"
             class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300 hover:text-slate-900"
           >
             {hero.primaryAction}
             <span aria-hidden="true">→</span>
           </a>
+
           <a
             href={contactHref}
             class="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:text-emerald-300"
@@ -96,18 +104,6 @@ const contactExternal = contactSection.contactExternal === true;
             <span aria-hidden="true">✳︎</span>
           </a>
         </div>
-
-        <div class="mt-10 flex flex-wrap gap-6">
-          {metrics.map((metric) => (
-            <div class="group">
-              <p class="text-xs uppercase tracking-[0.35em] text-slate-400">{metric.label}</p>
-              <div class="mt-2 text-3xl font-semibold text-white transition group-hover:text-emerald-300">
-                {metric.value}
-              </div>
-              <p class="text-sm text-slate-400">{metric.detail}</p>
-            </div>
-          ))}
-        </div>
       </div>
 
       <aside class="space-y-5 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
@@ -116,123 +112,68 @@ const contactExternal = contactSection.contactExternal === true;
             <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
             <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-300"></span>
           </span>
-          {hero.availability}
+          {hero.status}
         </div>
-        <div class="space-y-3">
-          <h2 class="text-xl font-semibold text-white">{aside.focusTitle}</h2>
-          <p class="text-sm text-slate-300">
-            {aside.focusDescription}
-          </p>
-        </div>
+
         <div class="rounded-2xl border border-white/10 bg-slate-950/70 p-4 text-sm text-slate-300">
-          <p class="font-medium text-white">{aside.focusListTitle}</p>
+          <p class="font-medium text-white">{aboutSection.label}</p>
           <ul class="mt-3 space-y-2 text-slate-300">
-            {aside.focusList.map((item) => (
+            {aboutHighlights.map((item) => (
               <li>· {item}</li>
             ))}
           </ul>
         </div>
+
         <div class="flex items-center justify-between rounded-2xl border border-white/10 bg-slate-900/60 p-4">
           <div>
-            <p class="text-xs uppercase tracking-[0.3em] text-slate-400">{aside.locationLabel}</p>
-            <p class="font-semibold text-white">{aside.locationValue}</p>
+            <p class="text-xs uppercase tracking-[0.3em] text-slate-400">{linksSection.label}</p>
+            <p class="font-semibold text-white">{linksSection.title}</p>
           </div>
           <a
-            href={aside.profileLink}
+            href={contactHref}
             class="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400 transition hover:text-white"
+            target={contactExternal ? '_blank' : undefined}
+            rel={contactExternal ? 'noreferrer' : undefined}
           >
-            {aside.profileLabel}
+            LinkedIn
           </a>
         </div>
       </aside>
     </section>
 
-    <section id="work" class="mb-24">
-      <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+    <section id="about" class="mb-20">
+      <div class="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
-          <p class="text-xs uppercase tracking-[0.4em] text-emerald-300">{experienceSection.label}</p>
-          <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">{experienceSection.title}</h2>
+          <p class="text-xs uppercase tracking-[0.4em] text-emerald-300">{aboutSection.label}</p>
+          <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">{aboutSection.title}</h2>
         </div>
-        <p class="max-w-xl text-sm text-slate-300">
-          {experienceSection.description}
-        </p>
+        <p class="max-w-2xl text-sm text-slate-300">{aboutSection.description}</p>
       </div>
 
-      <div class="space-y-8">
-        {experiences.map((experience) => (
-          <article class="group relative overflow-hidden rounded-3xl border border-white/5 bg-white/5 p-8 transition hover:border-emerald-400/40 hover:bg-white/10">
-            <div class="flex flex-wrap items-center justify-between gap-4">
-              <div>
-                <h3 class="text-xl font-semibold text-white">{experience.company}</h3>
-                <p class="text-sm text-emerald-300">{experience.role}</p>
-              </div>
-              <span class="text-xs uppercase tracking-[0.3em] text-slate-400">{experience.period}</span>
-            </div>
-            <p class="mt-5 max-w-3xl text-sm text-slate-300">{experience.description}</p>
-            {experience.highlights && (
-              <ul class="mt-6 space-y-2 text-sm text-slate-300">
-                {experience.highlights.map((item) => (
-                  <li class="flex items-start gap-3">
-                    <span class="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-300"></span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </article>
-        ))}
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-8">
+        <ul class="grid gap-3 text-sm text-slate-200 md:grid-cols-2">
+          {aboutHighlights.map((item) => (
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-300"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
 
-    <section id="projects" class="mb-24">
-      <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+    <section id="stack" class="mb-20">
+      <div class="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
-          <p class="text-xs uppercase tracking-[0.4em] text-cyan-300">{projectsSection.label}</p>
-          <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">{projectsSection.title}</h2>
+          <p class="text-xs uppercase tracking-[0.4em] text-cyan-300">{stackSection.label}</p>
+          <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">{stackSection.title}</h2>
         </div>
-        <p class="max-w-xl text-sm text-slate-300">
-          {projectsSection.description}
-        </p>
+        <p class="max-w-2xl text-sm text-slate-300">{stackSection.description}</p>
       </div>
 
       <div class="grid gap-6 md:grid-cols-2">
-        {projects.map((project) => (
-          <article class="group relative overflow-hidden rounded-3xl border border-white/5 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-8 transition hover:border-cyan-400/40 hover:shadow-[0_30px_80px_-40px_rgba(34,211,238,0.4)]">
-            <div class="flex items-center justify-between">
-              <h3 class="text-xl font-semibold text-white">{project.name}</h3>
-              <span class="text-xs uppercase tracking-[0.3em] text-cyan-300">{projectsSection.caseLabel}</span>
-            </div>
-            <p class="mt-4 text-sm text-slate-200">{project.detail}</p>
-            <div class="mt-4 rounded-2xl border border-white/10 bg-slate-950/70 p-4 text-sm text-slate-300">
-              <p class="font-medium text-white">{projectsSection.impactLabel}</p>
-              <p class="mt-2 text-slate-300">{project.impact}</p>
-            </div>
-            <div class="mt-5 flex flex-wrap gap-3">
-              {project.stack.map((tech) => (
-                <span class="inline-flex items-center rounded-full bg-slate-900/80 px-3 py-1 text-xs uppercase tracking-[0.25em] text-slate-200">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section id="skills" class="mb-24">
-      <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div>
-          <p class="text-xs uppercase tracking-[0.4em] text-indigo-300">{skillsSection.label}</p>
-          <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">{skillsSection.title}</h2>
-        </div>
-        <p class="max-w-xl text-sm text-slate-300">
-          {skillsSection.description}
-        </p>
-      </div>
-
-      <div class="grid gap-6 md:grid-cols-2">
-        {skillGroups.map((group) => (
-          <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        {stackGroups.map((group) => (
+          <article class="rounded-3xl border border-white/10 bg-white/5 p-6">
             <h3 class="text-lg font-semibold text-white">{group.title}</h3>
             <ul class="mt-4 grid gap-2 text-sm text-slate-300">
               {group.items.map((item) => (
@@ -242,23 +183,66 @@ const contactExternal = contactSection.contactExternal === true;
                 </li>
               ))}
             </ul>
-          </div>
+          </article>
         ))}
       </div>
     </section>
 
-    <section id="contact" class="mb-24">
+    <section id="recent" class="mb-20">
+      <div class="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="text-xs uppercase tracking-[0.4em] text-indigo-300">{recentSection.label}</p>
+          <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">{recentSection.title}</h2>
+        </div>
+        <p class="max-w-2xl text-sm text-slate-300">{recentSection.description}</p>
+      </div>
+
+      <article class="rounded-3xl border border-white/10 bg-white/5 p-8">
+        <div class="mb-5 inline-flex rounded-full border border-white/10 bg-slate-950/70 px-4 py-2 text-xs uppercase tracking-[0.25em] text-slate-300">
+          {recentSection.period}
+        </div>
+
+        <ul class="space-y-3 text-sm text-slate-200">
+          {recentHighlights.map((item) => (
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-300"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </article>
+    </section>
+
+    <section id="info" class="mb-20">
+      <div class="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="text-xs uppercase tracking-[0.4em] text-amber-300">{infoSection.label}</p>
+          <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">{infoSection.title}</h2>
+        </div>
+        <p class="max-w-2xl text-sm text-slate-300">{infoSection.description}</p>
+      </div>
+
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-8">
+        <ul class="grid gap-3 text-sm text-slate-200 md:grid-cols-2">
+          {infoHighlights.map((item) => (
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-300"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section id="links" class="mb-20">
       <div class="rounded-[32px] border border-white/10 bg-gradient-to-br from-slate-900/80 via-slate-900/60 to-slate-900/80 p-10 md:p-14">
         <div class="grid gap-8 md:grid-cols-[2fr_3fr] md:items-center">
           <div>
-            <p class="text-xs uppercase tracking-[0.4em] text-emerald-300">{contactSection.label}</p>
-            <h2 class="mt-4 text-3xl font-semibold text-white md:text-4xl">
-              {contactSection.title}
-            </h2>
-            <p class="mt-4 max-w-md text-sm text-slate-300">
-              {contactSection.description}
-            </p>
+            <p class="text-xs uppercase tracking-[0.4em] text-emerald-300">{linksSection.label}</p>
+            <h2 class="mt-4 text-3xl font-semibold text-white md:text-4xl">{linksSection.title}</h2>
+            <p class="mt-4 max-w-md text-sm text-slate-300">{linksSection.description}</p>
           </div>
+
           <div class="space-y-5">
             <div class="grid gap-3 text-sm text-slate-200 md:grid-cols-2">
               {socialLinks.map((link) => (
@@ -274,7 +258,7 @@ const contactExternal = contactSection.contactExternal === true;
               ))}
             </div>
             <div class="rounded-2xl border border-dashed border-white/10 bg-slate-900/60 p-5 text-xs uppercase tracking-[0.3em] text-slate-400">
-              {contactSection.note}
+              {linksSection.note}
             </div>
           </div>
         </div>
@@ -285,7 +269,7 @@ const contactExternal = contactSection.contactExternal === true;
   <footer class="border-t border-white/5 bg-slate-950/80 py-8">
     <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-xs uppercase tracking-[0.35em] text-slate-500 md:flex-row">
       <p>© {new Date().getFullYear()} Müslüm GÜZEL</p>
-      <p>{contactSection.footerNote}</p>
+      <p>{linksSection.footerNote}</p>
     </div>
   </footer>
 </div>

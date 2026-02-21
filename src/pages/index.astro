@@ -5,170 +5,95 @@ import PortfolioView from '../components/PortfolioView.astro';
 const translations = {
   tr: {
     metaDescription:
-      '.NET Core ve React odaklı proje geçmişi, teknik çalışma alanları ve geliştirme notlarının yer aldığı kişisel profil sitesi.',
+      '.NET Core, React, Go ve yapay zeka entegrasyonları odağında teknik geçmiş ve kullanılan teknoloji yığını.',
     hero: {
       roleLabel: 'Software Developer',
-      title: 'Yazılım Geliştirme Profili',
+      title: 'Teknik Profil',
       subtitle:
-        '.NET Core ve React ile yürütülen proje geçmişi, kullanılan yaklaşımlar ve teknik odak alanları.',
-      availability: 'Kişisel teknik profil',
-      primaryAction: 'Deneyim',
+        'Bu sayfa özgeçmiş formatı yerine teknoloji odağı, genel çalışma alanları ve güncel teknik notları içerir.',
+      status: 'Genel teknik profil',
+      primaryAction: 'Tech Stack',
       secondaryAction: 'LinkedIn Profili',
     },
-    metrics: [
-      { label: 'Deneyim', value: '10+ yıl', detail: 'yazılım geliştirme' },
-      { label: 'Odak', value: 'Backend + Frontend', detail: '.NET Core & React' },
-      { label: 'Çalışma alanı', value: 'Kurumsal sistemler', detail: 'geliştirme ve bakım' },
-    ],
-    aside: {
-      focusTitle: 'Teknik odaklarım',
-      focusDescription:
-        'Kurumsal uygulamalarda üstlendiğim teknik sorumlulukları ve çalışma yaklaşımını özetliyorum.',
-      focusListTitle: 'Çalışma başlıkları',
-      focusList: [
-        '.NET Core servisleri ve React tabanlı arayüzler',
-        'CI/CD otomasyonu ve kod gözden geçirme süreçleri',
-        'Performans izleme, hata ayıklama ve bilgi paylaşımı',
-      ],
-      locationLabel: 'Konum',
-      locationValue: 'Türkiye · Remote / Hybrid',
-      profileLabel: 'LinkedIn',
-      profileLink: 'https://www.linkedin.com/in/muslum-guzel-2b60037a',
-    },
-    experienceSection: {
-      navLabel: 'Deneyim',
-      label: 'Deneyim',
-      title: 'Kariyer geçmişi',
-      description: 'Rollere göre üstlendiğim teknik sorumlulukların kısa özeti.',
-    },
-    experiences: [
-      {
-        company: 'Turkish Airlines Technology',
-        role: 'Software Developer',
-        period: 'Ekim 2020 → Günümüz',
-        description:
-          'React Admin ve .NET Core tabanlı iç uygulamaların geliştirme ve bakımında görev aldım.',
-        highlights: [
-          'Departman içi süreçlerde kullanılan web uygulamalarında geliştirme yaptım.',
-          'CI/CD ve debugging süreçlerinde standartların uygulanmasına katkı verdim.',
-          'Takım içi dokümantasyon ve bilgi paylaşımına katkı sağladım.',
-        ],
-      },
-      {
-        company: 'Turkcell Teknoloji',
-        role: 'Software Developer',
-        period: 'Şubat 2018 → Ekim 2020',
-        description:
-          'ONENT müşteri bilgi sisteminin backend ve frontend modernizasyon çalışmalarında yer aldım.',
-        highlights: [
-          'Entity Framework tarafında performans ve sorgu iyileştirmeleri yaptım.',
-          'SCRUM süreçlerine otomatik testleri dahil ettim.',
-          'React tabanlı yönetim arayüzleri için yeniden kullanılabilir komponentler geliştirdim.',
-        ],
-      },
-      {
-        company: 'Vizyoneks Information Technologies',
-        role: 'Software Developer',
-        period: 'Eylül 2015 → Şubat 2018',
-        description:
-          'LIFEIN kurumsal platformunun Ext.Net ve ASP.NET Web Forms tabanlı modüllerinde geliştirme yaptım.',
-        highlights: [
-          'Oracle tarafında işlem odaklı prosedürler geliştirdim.',
-          'Modüler ön yüz mimarisi üzerinde çalıştım.',
-          'Dağıtık servis entegrasyonları için ortak bileşenler hazırladım.',
-        ],
-      },
-      {
-        company: 'DDI Technology',
-        role: 'Software Developer',
-        period: 'Mart 2014 → Eylül 2015',
-        description:
-          'Kurumsal belge işleme süreçlerini otomatikleştiren çözümler üzerinde çalıştım.',
-        highlights: [
-          'KOFAX entegrasyonlu belge işleme araçlarını sıfırdan geliştirdim.',
-          'Gerçek zamanlı güncellemeler için WCF servislerini devreye aldım.',
-          'Uzun vadeli kullanılan ölçeklenebilir servis bileşenleri geliştirdim.',
-        ],
-      },
-      {
-        company: 'Dream R&D',
-        role: 'Software Developer',
-        period: 'Haziran 2013 → Şubat 2014',
-        description:
-          'Ar-Ge odaklı prototip projelerde modern araç ve çerçeveleri deneyimledim.',
-        highlights: [
-          'Farklı sektörlere yönelik PoC uygulamalarına katkıda bulundum.',
-          'Yeni teknolojilerin uygulanabilirliğini test eden prototipler geliştirdim.',
-        ],
-      },
-    ],
-    projectsSection: {
-      navLabel: 'Projeler',
-      label: 'Projeler',
-      title: 'Sistem çalışmaları',
+    aboutSection: {
+      navLabel: 'Genel',
+      label: 'Genel Bilgi',
+      title: 'Kapsam',
       description:
-        'Farklı dönemlerde üzerinde çalıştığım uygulama ve platformların kısa özeti.',
-      caseLabel: 'Kapsam',
-      impactLabel: 'Not',
+        '10+ yıllık yazılım geliştirme deneyimiyle kurumsal sistemlerde backend, frontend ve entegrasyon odaklı teknik katkılar.',
     },
-    projects: [
-      {
-        name: 'Operasyonel İç Uygulamalar',
-        detail:
-          'Türk Hava Yolları Teknoloji bünyesinde React Admin ve .NET Core ile geliştirilen süreç otomasyon araçları.',
-        impact: 'Departman içi operasyon süreçlerinde kullanılan uygulamalar.',
-        stack: ['React Admin', '.NET Core', 'CI/CD', 'Azure DevOps'],
-      },
-      {
-        name: 'ONENT Müşteri Bilgi Sistemi',
-        detail:
-          'Turkcell müşteri bilgilerinin yönetildiği kritik uygulamanın front ve backend modernizasyonu.',
-        impact: 'Müşteri bilgi yönetimi için kullanılan platformun güncellenen modülleri.',
-        stack: ['.NET Core', 'Entity Framework', 'React', 'Automated Testing'],
-      },
-      {
-        name: 'LIFEIN Kurumsal Platformu',
-        detail:
-          'Ext.Net ve ASP.NET Web Forms tabanlı, yüksek hacimli işlem yapan iş yönetim platformu.',
-        impact: 'Yüksek işlem hacmine sahip iş yönetim platformu bileşenleri.',
-        stack: ['Ext.Net', 'ASP.NET Web Forms', 'Oracle', 'SOLID'],
-      },
+    aboutHighlights: [
+      'Çalışma odağı: kurumsal uygulamalar, entegrasyon katmanları ve geliştirici araçları.',
+      'Yaklaşım: sürdürülebilir mimari, tekrar kullanılabilir bileşenler ve dokümantasyon.',
+      'Teknik eksen: .NET ekosistemi, React tabanlı arayüzler ve API odaklı sistemler.',
+      'Son dönemde AI destekli SDLC araç entegrasyonları üzerine yoğunlaşma.',
     ],
-    skillsSection: {
-      navLabel: 'Uzmanlık',
-      label: 'Uzmanlık',
-      title: 'Teknik odak alanları',
-      description: 'Kullanılan teknolojiler, mimari yaklaşımlar ve ekip süreçleri.',
+    stackSection: {
+      navLabel: 'Stack',
+      label: 'Tech Stack',
+      title: 'Kullandığım Teknolojiler',
+      description: 'Projelerde aktif kullandığım dil, framework, altyapı ve araçlar.',
     },
-    skillGroups: [
+    stackGroups: [
       {
         title: 'Diller & Frameworkler',
-        items: ['.NET Core', 'C#', 'React', 'JavaScript', 'Ext.Net', 'KnockoutJS'],
+        items: ['C#', '.NET Core / .NET 3.1', 'Go', 'React', 'JavaScript'],
       },
       {
-        title: 'Mimari & Prensipler',
-        items: ['SOLID', 'Clean Architecture', 'Design Patterns', 'Microservices'],
+        title: 'AI & Entegrasyon',
+        items: ['MCP (Model Context Protocol)', 'LLM entegrasyonları', 'Gateway entegrasyonları', 'REST API'],
       },
       {
-        title: 'Veri & Altyapı',
-        items: ['Oracle', 'Entity Framework', 'RESTful API tasarımı', 'SQL optimizasyonu'],
+        title: 'Araçlar & Platformlar',
+        items: ['Jira / TKJira', 'Confluence', 'SonarQube', 'GitHub Copilot', 'Azure DevOps'],
       },
       {
-        title: 'Ekip & Süreç',
-        items: ['Agile / SCRUM', 'CI/CD', 'TDD', 'Dokümantasyon ve mentorluk'],
+        title: 'Mimari & Süreç',
+        items: ['Clean Architecture', 'Design Patterns', 'CI/CD', 'Agile / SCRUM', 'Dokümantasyon'],
       },
     ],
-    contactSection: {
+    recentSection: {
+      navLabel: 'Son Dönem',
+      label: 'Son 10 Ay',
+      title: 'Nisan 2025 Sonrası Teknik Özet',
+      description:
+        'Turkish Technology içinde farklı bir direktörlükte sürdürülen çalışmalarda öne çıkan teknoloji başlıkları.',
+      period: 'Nisan 2025 → Günümüz',
+    },
+    recentHighlights: [
+      '.NET 3.1 tabanlı uygulamaların geliştirme ortamına alınması ve teknik destek süreçleri.',
+      'MCP tabanlı server geliştirmeleri ile şirket içi LLM entegrasyon çalışmaları.',
+      'Jira, TKJira, Confluence ve SonarQube sistemleriyle AI araçlarının entegrasyonu.',
+      'Dokümantasyon ve metrik görünürlüğü için web uygulaması geliştirmeleri.',
+      'Şirket güvenlik standartlarına uygun, tekrar kullanılabilir template proje yapıları.',
+      'Go ile model servis geçitleri ve AI gateway katmanlarında özellik geliştirmeleri.',
+      'GitHub Copilot ve benzeri kod asistanları için lisans/proxy odaklı teknik destek.',
+    ],
+    infoSection: {
+      navLabel: 'Notlar',
+      label: 'Genel Notlar',
+      title: 'Çalışma Prensipleri',
+      description: 'Teknik üretim sürecinde öncelik verilen genel başlıklar.',
+    },
+    infoHighlights: [
+      'Kod kalitesi ve bakım kolaylığı için modüler yaklaşım.',
+      'Tekrarlı işleri azaltan standart template ve süreç tasarımları.',
+      'Ekip içi görünürlük için metrik ve dokümantasyon disiplini.',
+      'Teknik sorunlarda hızlı geri bildirim ve paylaşım kültürü.',
+      'Yapay zeka destekli geliştirme araçlarının kontrollü ve verimli kullanımı.',
+      'İhtiyaca göre backend, frontend ve entegrasyon katmanlarında görev alma.',
+    ],
+    linksSection: {
       navLabel: 'Bağlantılar',
       label: 'Bağlantılar',
-      title: 'Profil ve yayın bağlantıları',
-      description: 'Teknik içerik ve çalışma geçmişine ait sosyal profil bağlantıları.',
-      note: 'Bu sitede doğrudan iletişim bilgisi paylaşılmamaktadır.',
+      title: 'Profil Bağlantıları',
+      description: 'Teknik içerik ve açık profil bağlantıları.',
+      note: 'Bu sitede doğrudan e-posta veya telefon bilgisi paylaşılmamaktadır.',
       contactHref: 'https://www.linkedin.com/in/muslum-guzel-2b60037a',
       contactExternal: true,
-      headerCta: 'LinkedIn Profili',
+      headerCta: 'LinkedIn',
       languageLabel: 'Dil seçimi',
-      footerNote: 'Yazılım geliştirme profili',
+      footerNote: 'Teknik profil',
     },
     socialLinks: [
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a', external: true },
@@ -178,174 +103,100 @@ const translations = {
     languageOptions: [
       { value: 'tr', label: 'Türkçe', abbreviation: 'TR', flag: '🇹🇷' },
       { value: 'en', label: 'English', abbreviation: 'EN', flag: '🇺🇸' },
-      { value: 'de', label: 'Almanca', abbreviation: 'DE', flag: '🇩🇪' },
+      { value: 'de', label: 'Deutsch', abbreviation: 'DE', flag: '🇩🇪' },
     ],
   },
   en: {
     metaDescription:
-      'Personal profile site with .NET Core and React project history, technical focus areas, and development notes.',
+      'Technical profile focused on .NET Core, React, Go, and AI-driven integration work.',
     hero: {
       roleLabel: 'Software Developer',
-      title: 'Software Development Profile',
+      title: 'Technical Profile',
       subtitle:
-        'Overview of projects, working practices, and technical focus areas across .NET Core and React.',
-      availability: 'Personal technical profile',
-      primaryAction: 'Experience',
+        'This page is intentionally not a CV. It presents technology focus, general work areas, and recent technical notes.',
+      status: 'General technical profile',
+      primaryAction: 'Tech Stack',
       secondaryAction: 'LinkedIn Profile',
     },
-    metrics: [
-      { label: 'Experience', value: '10+ years', detail: 'software development' },
-      { label: 'Focus', value: 'Backend + Frontend', detail: '.NET Core & React' },
-      { label: 'Domain', value: 'Enterprise systems', detail: 'delivery and maintenance' },
+    aboutSection: {
+      navLabel: 'Overview',
+      label: 'Overview',
+      title: 'Scope',
+      description:
+        '10+ years in software development across enterprise systems, with backend, frontend, and integration contributions.',
+    },
+    aboutHighlights: [
+      'Focus: enterprise applications, integration layers, and developer tooling.',
+      'Approach: sustainable architecture, reusable components, and clear documentation.',
+      'Core axis: .NET ecosystem, React interfaces, and API-centric systems.',
+      'Recent emphasis on AI-enabled SDLC tooling integrations.',
     ],
-    aside: {
-      focusTitle: 'Focus areas',
-      focusDescription:
-        'Summary of technical responsibilities and working approach across enterprise software projects.',
-      focusListTitle: 'Work topics',
-      focusList: [
-        '.NET Core services and React-based admin tools',
-        'CI/CD automation and structured code reviews',
-        'Performance monitoring, debugging, and knowledge sharing',
-      ],
-      locationLabel: 'Location',
-      locationValue: 'Turkey · Remote / Hybrid',
-      profileLabel: 'LinkedIn',
-      profileLink: 'https://www.linkedin.com/in/muslum-guzel-2b60037a',
+    stackSection: {
+      navLabel: 'Stack',
+      label: 'Tech Stack',
+      title: 'Technologies in Use',
+      description: 'Languages, frameworks, platforms, and tools actively used in projects.',
     },
-    experienceSection: {
-      navLabel: 'Experience',
-      label: 'Experience',
-      title: 'Career history',
-      description: 'Short summary of technical responsibilities by role.',
-    },
-    experiences: [
-      {
-        company: 'Turkish Airlines Technology',
-        role: 'Software Developer',
-        period: 'Oct 2020 → Present',
-        description:
-          'Worked on development and maintenance of internal applications built with React Admin and .NET Core.',
-        highlights: [
-          'Contributed to web applications used in internal operational workflows.',
-          'Contributed to standardisation of CI/CD and debugging practices.',
-          'Contributed to team documentation and knowledge sharing.',
-        ],
-      },
-      {
-        company: 'Turkcell Technology',
-        role: 'Software Developer',
-        period: 'Feb 2018 → Oct 2020',
-        description:
-          'Worked on backend and frontend modernisation tasks for the ONENT customer information system.',
-        highlights: [
-          'Worked on query and performance improvements with Entity Framework.',
-          'Integrated automated testing into SCRUM release cycles.',
-          'Built reusable React components for admin interfaces.',
-        ],
-      },
-      {
-        company: 'Vizyoneks Information Technologies',
-        role: 'Software Developer',
-        period: 'Sep 2015 → Feb 2018',
-        description:
-          'Worked on Ext.Net and ASP.NET Web Forms modules within the LIFEIN enterprise platform.',
-        highlights: [
-          'Implemented Oracle procedures for transaction-heavy workloads.',
-          'Worked on modular front-end architecture.',
-          'Prepared shared components for distributed service integrations.',
-        ],
-      },
-      {
-        company: 'DDI Technology',
-        role: 'Software Developer',
-        period: 'Mar 2014 → Sep 2015',
-        description:
-          'Developed automation solutions for enterprise document processing.',
-        highlights: [
-          'Built KOFAX-integrated document processing tools from scratch.',
-          'Deployed WCF services for real-time synchronisation.',
-          'Delivered scalable service components adopted long term.',
-        ],
-      },
-      {
-        company: 'Dream R&D',
-        role: 'Software Developer',
-        period: 'Jun 2013 → Feb 2014',
-        description:
-          'Worked on R&D prototypes, testing modern frameworks in rapid iterations.',
-        highlights: [
-          'Contributed to proof-of-concept applications across industries.',
-          'Built prototypes to evaluate emerging technologies.',
-        ],
-      },
-    ],
-    projectsSection: {
-      navLabel: 'Projects',
-      label: 'Projects',
-      title: 'System work',
-      description: 'Summary of applications and platforms worked on across different periods.',
-      caseLabel: 'Scope',
-      impactLabel: 'Note',
-    },
-    projects: [
-      {
-        name: 'Operational Internal Apps',
-        detail:
-          'Process automation tools built with React Admin and .NET Core for Turkish Airlines Technology.',
-        impact: 'Applications used in internal operational workflows.',
-        stack: ['React Admin', '.NET Core', 'CI/CD', 'Azure DevOps'],
-      },
-      {
-        name: 'ONENT Customer Information System',
-        detail:
-          'Frontend and backend modernisation of Turkcell’s customer information platform.',
-        impact: 'Updated modules of a platform used for customer information management.',
-        stack: ['.NET Core', 'Entity Framework', 'React', 'Automated Testing'],
-      },
-      {
-        name: 'LIFEIN Enterprise Platform',
-        detail:
-          'High-volume business management platform delivered with Ext.Net and ASP.NET Web Forms.',
-        impact: 'Components of a high-volume business management platform.',
-        stack: ['Ext.Net', 'ASP.NET Web Forms', 'Oracle', 'SOLID'],
-      },
-    ],
-    skillsSection: {
-      navLabel: 'Skills',
-      label: 'Skills',
-      title: 'Technical coverage',
-      description: 'Technologies, architecture practices, and team process coverage.',
-    },
-    skillGroups: [
+    stackGroups: [
       {
         title: 'Languages & Frameworks',
-        items: ['.NET Core', 'C#', 'React', 'JavaScript', 'Ext.Net', 'KnockoutJS'],
+        items: ['C#', '.NET Core / .NET 3.1', 'Go', 'React', 'JavaScript'],
       },
       {
-        title: 'Architecture & Principles',
-        items: ['SOLID', 'Clean Architecture', 'Design Patterns', 'Microservices'],
+        title: 'AI & Integration',
+        items: ['MCP (Model Context Protocol)', 'LLM integrations', 'Gateway integrations', 'REST APIs'],
       },
       {
-        title: 'Data & Infrastructure',
-        items: ['Oracle', 'Entity Framework', 'REST API design', 'SQL optimisation'],
+        title: 'Tools & Platforms',
+        items: ['Jira / TKJira', 'Confluence', 'SonarQube', 'GitHub Copilot', 'Azure DevOps'],
       },
       {
-        title: 'Team & Process',
-        items: ['Agile / SCRUM', 'CI/CD', 'TDD', 'Documentation & mentoring'],
+        title: 'Architecture & Process',
+        items: ['Clean Architecture', 'Design Patterns', 'CI/CD', 'Agile / SCRUM', 'Documentation'],
       },
     ],
-    contactSection: {
+    recentSection: {
+      navLabel: 'Recent',
+      label: 'Last 10 Months',
+      title: 'Technical Summary Since April 2025',
+      description:
+        'Technology topics from work continued under a different directorate in Turkish Technology.',
+      period: 'April 2025 → Present',
+    },
+    recentHighlights: [
+      '.NET 3.1 environment setup and technical support for related applications.',
+      'MCP-based server development for internal LLM integration work.',
+      'Integration efforts across Jira, TKJira, Confluence, and SonarQube with AI tools.',
+      'Web application development for documentation and metric visibility.',
+      'Reusable secure template projects aligned with corporate security standards.',
+      'Feature contributions in Go across model-serving gateways and AI gateway layers.',
+      'License/proxy-focused technical support for GitHub Copilot and similar coding assistants.',
+    ],
+    infoSection: {
+      navLabel: 'Notes',
+      label: 'General Notes',
+      title: 'Working Principles',
+      description: 'General priorities followed during technical delivery.',
+    },
+    infoHighlights: [
+      'Modular implementation for maintainability and code quality.',
+      'Template and process design to reduce repetitive setup work.',
+      'Metrics and documentation discipline for team visibility.',
+      'Fast technical feedback and shared problem-solving culture.',
+      'Controlled and practical usage of AI-assisted development tools.',
+      'Contribution across backend, frontend, and integration layers as needed.',
+    ],
+    linksSection: {
       navLabel: 'Links',
       label: 'Links',
-      title: 'Profile and publication links',
-      description: 'Social profile links for technical content and background.',
-      note: 'Direct contact details are not published on this site.',
+      title: 'Profile Links',
+      description: 'Public profile links and technical publication channels.',
+      note: 'Direct email and phone details are intentionally not published on this site.',
       contactHref: 'https://www.linkedin.com/in/muslum-guzel-2b60037a',
       contactExternal: true,
-      headerCta: 'LinkedIn Profile',
+      headerCta: 'LinkedIn',
       languageLabel: 'Language switcher',
-      footerNote: 'Software development profile',
+      footerNote: 'Technical profile',
     },
     socialLinks: [
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a', external: true },
@@ -360,169 +211,95 @@ const translations = {
   },
   de: {
     metaDescription:
-      'Persönliche Profilseite mit Projektverlauf in .NET Core und React, technischen Schwerpunkten und Entwicklungsnotizen.',
+      'Technisches Profil mit Fokus auf .NET Core, React, Go und KI-gestützte Integrationsarbeit.',
     hero: {
       roleLabel: 'Softwareentwickler',
-      title: 'Softwareentwicklungsprofil',
+      title: 'Technisches Profil',
       subtitle:
-        'Überblick über Projekte, Arbeitsweisen und technische Schwerpunkte mit .NET Core und React.',
-      availability: 'Persönliches technisches Profil',
-      primaryAction: 'Erfahrung',
+        'Diese Seite ist bewusst kein CV. Sie zeigt Technologieschwerpunkte, allgemeine Arbeitsfelder und aktuelle technische Notizen.',
+      status: 'Allgemeines technisches Profil',
+      primaryAction: 'Tech Stack',
       secondaryAction: 'LinkedIn-Profil',
     },
-    metrics: [
-      { label: 'Erfahrung', value: '10+ Jahre', detail: 'Softwareentwicklung' },
-      { label: 'Fokus', value: 'Backend + Frontend', detail: '.NET Core & React' },
-      { label: 'Bereich', value: 'Enterprise-Systeme', detail: 'Entwicklung und Wartung' },
+    aboutSection: {
+      navLabel: 'Überblick',
+      label: 'Überblick',
+      title: 'Umfang',
+      description:
+        '10+ Jahre Softwareentwicklung in Enterprise-Systemen mit Beiträgen in Backend, Frontend und Integrationsschichten.',
+    },
+    aboutHighlights: [
+      'Fokus: Enterprise-Anwendungen, Integrationsschichten und Developer-Tooling.',
+      'Ansatz: nachhaltige Architektur, wiederverwendbare Komponenten und klare Dokumentation.',
+      'Kernachse: .NET-Ökosystem, React-Oberflächen und API-zentrierte Systeme.',
+      'Aktueller Schwerpunkt: KI-unterstützte SDLC-Tool-Integrationen.',
     ],
-    aside: {
-      focusTitle: 'Fachliche Schwerpunkte',
-      focusDescription:
-        'Zusammenfassung technischer Verantwortungen und Arbeitsweisen in Enterprise-Softwareprojekten.',
-      focusListTitle: 'Arbeitsthemen',
-      focusList: [
-        '.NET-Core-Services und React-basierte Admin-Tools',
-        'CI/CD-Automatisierung und strukturierte Code-Reviews',
-        'Performancemonitoring, Debugging und Wissensaustausch',
-      ],
-      locationLabel: 'Standort',
-      locationValue: 'Türkei · Remote / Hybrid',
-      profileLabel: 'LinkedIn',
-      profileLink: 'https://www.linkedin.com/in/muslum-guzel-2b60037a',
+    stackSection: {
+      navLabel: 'Stack',
+      label: 'Tech Stack',
+      title: 'Eingesetzte Technologien',
+      description: 'Aktiv verwendete Sprachen, Frameworks, Plattformen und Tools.',
     },
-    experienceSection: {
-      navLabel: 'Erfahrung',
-      label: 'Erfahrung',
-      title: 'Beruflicher Verlauf',
-      description: 'Kurze Zusammenfassung technischer Aufgaben je Rolle.',
-    },
-    experiences: [
-      {
-        company: 'Turkish Airlines Technology',
-        role: 'Softwareentwickler',
-        period: 'Okt 2020 → Heute',
-        description:
-          'An Entwicklung und Wartung interner Anwendungen mit React Admin und .NET Core gearbeitet.',
-        highlights: [
-          'An Webanwendungen für interne operative Abläufe mitgearbeitet.',
-          'Zur Standardisierung von CI/CD- und Debugging-Prozessen beigetragen.',
-          'Zur Teamdokumentation und zum Wissensaustausch beigetragen.',
-        ],
-      },
-      {
-        company: 'Turkcell Technology',
-        role: 'Softwareentwickler',
-        period: 'Feb 2018 → Okt 2020',
-        description:
-          'An Backend- und Frontend-Modernisierung des ONENT-Kundendatensystems gearbeitet.',
-        highlights: [
-          'An Query- und Performance-Optimierungen mit Entity Framework gearbeitet.',
-          'Automatisierte Tests in den SCRUM-Release-Zyklus integriert.',
-          'Wiederverwendbare React-Komponenten für Admin-Oberflächen erstellt.',
-        ],
-      },
-      {
-        company: 'Vizyoneks Information Technologies',
-        role: 'Softwareentwickler',
-        period: 'Sep 2015 → Feb 2018',
-        description:
-          'An Ext.Net- und ASP.NET-Web-Forms-Modulen der LIFEIN-Unternehmensplattform gearbeitet.',
-        highlights: [
-          'Oracle-Prozeduren für transaktionsintensive Abläufe umgesetzt.',
-          'An modularer Frontend-Architektur gearbeitet.',
-          'Gemeinsame Komponenten für verteilte Service-Integrationen vorbereitet.',
-        ],
-      },
-      {
-        company: 'DDI Technology',
-        role: 'Softwareentwickler',
-        period: 'Mär 2014 → Sep 2015',
-        description:
-          'Automatisierungslösungen für die Verarbeitung von Unternehmensdokumenten entwickelt.',
-        highlights: [
-          'Dokumentenverarbeitungstools mit KOFAX-Integration von Grund auf aufgebaut.',
-          'WCF-Services für Echtzeit-Synchronisation bereitgestellt.',
-          'Skalierbare Servicekomponenten entwickelt, die langfristig genutzt werden.',
-        ],
-      },
-      {
-        company: 'Dream R&D',
-        role: 'Softwareentwickler',
-        period: 'Jun 2013 → Feb 2014',
-        description:
-          'An F&E-Prototypen gearbeitet und moderne Frameworks in schnellen Iterationen getestet.',
-        highlights: [
-          'Zu Proof-of-Concept-Anwendungen in verschiedenen Branchen beigetragen.',
-          'Prototypen erstellt, um neue Technologien zu evaluieren.',
-        ],
-      },
-    ],
-    projectsSection: {
-      navLabel: 'Projekte',
-      label: 'Projekte',
-      title: 'Systemarbeiten',
-      description: 'Zusammenfassung von Anwendungen und Plattformen aus verschiedenen Zeiträumen.',
-      caseLabel: 'Umfang',
-      impactLabel: 'Hinweis',
-    },
-    projects: [
-      {
-        name: 'Operative interne Apps',
-        detail:
-          'Prozessautomatisierungstools für Turkish Airlines Technology, entwickelt mit React Admin und .NET Core.',
-        impact: 'Anwendungen für interne operative Abläufe.',
-        stack: ['React Admin', '.NET Core', 'CI/CD', 'Azure DevOps'],
-      },
-      {
-        name: 'ONENT-Kundendatensystem',
-        detail:
-          'Modernisierung der Frontend- und Backend-Schichten von Turksells Kundendatenplattform.',
-        impact: 'Aktualisierte Module einer Plattform für Kundendatenverwaltung.',
-        stack: ['.NET Core', 'Entity Framework', 'React', 'Automatisiertes Testen'],
-      },
-      {
-        name: 'LIFEIN-Unternehmensplattform',
-        detail:
-          'Geschäftsplattform mit hohem Transaktionsvolumen, realisiert mit Ext.Net und ASP.NET Web Forms.',
-        impact: 'Bausteine einer geschäftskritischen Plattform mit hohem Volumen.',
-        stack: ['Ext.Net', 'ASP.NET Web Forms', 'Oracle', 'SOLID'],
-      },
-    ],
-    skillsSection: {
-      navLabel: 'Kompetenzen',
-      label: 'Kompetenzen',
-      title: 'Technische Schwerpunkte',
-      description: 'Verwendete Technologien, Architekturprinzipien und Teamprozesse.',
-    },
-    skillGroups: [
+    stackGroups: [
       {
         title: 'Sprachen & Frameworks',
-        items: ['.NET Core', 'C#', 'React', 'JavaScript', 'Ext.Net', 'KnockoutJS'],
+        items: ['C#', '.NET Core / .NET 3.1', 'Go', 'React', 'JavaScript'],
       },
       {
-        title: 'Architektur & Prinzipien',
-        items: ['SOLID', 'Clean Architecture', 'Design Patterns', 'Microservices'],
+        title: 'KI & Integration',
+        items: ['MCP (Model Context Protocol)', 'LLM-Integrationen', 'Gateway-Integrationen', 'REST APIs'],
       },
       {
-        title: 'Daten & Infrastruktur',
-        items: ['Oracle', 'Entity Framework', 'REST-API-Design', 'SQL-Optimierung'],
+        title: 'Tools & Plattformen',
+        items: ['Jira / TKJira', 'Confluence', 'SonarQube', 'GitHub Copilot', 'Azure DevOps'],
       },
       {
-        title: 'Team & Prozess',
-        items: ['Agile / SCRUM', 'CI/CD', 'TDD', 'Dokumentation & Mentoring'],
+        title: 'Architektur & Prozess',
+        items: ['Clean Architecture', 'Design Patterns', 'CI/CD', 'Agile / SCRUM', 'Dokumentation'],
       },
     ],
-    contactSection: {
+    recentSection: {
+      navLabel: 'Aktuell',
+      label: 'Letzte 10 Monate',
+      title: 'Technische Zusammenfassung seit April 2025',
+      description:
+        'Technologie-Schwerpunkte aus der Arbeit in einer anderen Direktion innerhalb von Turkish Technology.',
+      period: 'April 2025 → Heute',
+    },
+    recentHighlights: [
+      'Einrichtung von .NET-3.1-Entwicklungsumgebungen und technischer Support dafür.',
+      'MCP-basierte Serverentwicklung für interne LLM-Integrationsarbeit.',
+      'Integrationsarbeit zwischen Jira, TKJira, Confluence, SonarQube und KI-Tools.',
+      'Webentwicklung für Dokumentation und Metrik-Transparenz.',
+      'Wiederverwendbare, sichere Template-Projekte gemäß Unternehmensstandards.',
+      'Go-basierte Feature-Beiträge in Model-Serving- und KI-Gateway-Schichten.',
+      'Lizenz-/Proxy-orientierter technischer Support für GitHub Copilot und ähnliche Assistenten.',
+    ],
+    infoSection: {
+      navLabel: 'Notizen',
+      label: 'Allgemeine Notizen',
+      title: 'Arbeitsprinzipien',
+      description: 'Allgemeine Prioritäten in der technischen Umsetzung.',
+    },
+    infoHighlights: [
+      'Modulare Umsetzung für Wartbarkeit und Codequalität.',
+      'Template- und Prozessdesign zur Reduzierung repetitiver Setup-Arbeit.',
+      'Metrik- und Dokumentationsdisziplin für Team-Transparenz.',
+      'Schnelles technisches Feedback und gemeinsames Problemlösen.',
+      'Kontrollierter und praxisnaher Einsatz KI-gestützter Entwicklungswerkzeuge.',
+      'Beiträge in Backend-, Frontend- und Integrationsschichten je nach Bedarf.',
+    ],
+    linksSection: {
       navLabel: 'Links',
       label: 'Links',
-      title: 'Profil- und Publikationslinks',
-      description: 'Soziale Profile mit technischen Inhalten und Hintergrund.',
-      note: 'Direkte Kontaktdaten werden auf dieser Seite nicht veröffentlicht.',
+      title: 'Profil-Links',
+      description: 'Öffentliche Profile und technische Publikationskanäle.',
+      note: 'Direkte E-Mail- und Telefondaten werden auf dieser Seite bewusst nicht veröffentlicht.',
       contactHref: 'https://www.linkedin.com/in/muslum-guzel-2b60037a',
       contactExternal: true,
-      headerCta: 'LinkedIn-Profil',
+      headerCta: 'LinkedIn',
       languageLabel: 'Sprachauswahl',
-      footerNote: 'Softwareentwicklungsprofil',
+      footerNote: 'Technisches Profil',
     },
     socialLinks: [
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a', external: true },
@@ -539,7 +316,7 @@ const translations = {
 
 const defaultLang = 'tr';
 const meta = {
-  title: 'Müslüm GÜZEL · Yazılım Profili',
+  title: 'Müslüm GÜZEL · Teknik Profil',
   description: translations[defaultLang].metaDescription,
   url: 'https://muslumguzel.com',
 };
@@ -556,7 +333,7 @@ const faviconUrl = `${base || ''}/favicon.svg`;
     <title>{meta.title}</title>
     <meta name="description" content={meta.description} />
     <meta name="author" content="Müslüm GÜZEL" />
-    <meta name="keywords" content=".NET, React, yazılım geliştirme, teknik profil, Türkiye" />
+    <meta name="keywords" content=".NET, React, Go, MCP, LLM, yazılım geliştirme, teknik profil" />
     <link rel="canonical" href={meta.url} />
     <link rel="icon" type="image/svg+xml" href={faviconUrl} />
 
@@ -620,7 +397,7 @@ const faviconUrl = `${base || ''}/favicon.svg`;
     <script is:inline>
       const SUPPORTED_LANGS = ['tr', 'en', 'de'];
       const viewContainer = document.getElementById('view-container');
-      const renderedViews = { tr: viewContainer.querySelector('[data-view=\"tr\"]') };
+      const renderedViews = { tr: viewContainer.querySelector('[data-view="tr"]') };
       const DEFAULT_LANG = document.body.dataset.activeLang || 'tr';
 
       function getTemplate(lang) {
