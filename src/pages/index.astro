@@ -100,7 +100,7 @@ const translations = {
   },
 };
 
-const defaultLang = 'tr';
+const defaultLang = 'en';
 const initial = translations[defaultLang];
 const profileName = 'Müslüm GÜZEL';
 
@@ -305,20 +305,24 @@ const meta = {
 
       .stack {
         margin: 18px 0 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 9px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 10px;
         padding: 0;
       }
 
-      .stack li {
+      .stack-item {
         list-style: none;
-        border: 1px solid #cdd5da;
+        border: 1px solid #d0d7dc;
         color: #1a2a33;
-        background: #ffffff;
-        border-radius: 999px;
-        padding: 8px 12px;
+        background: linear-gradient(180deg, #ffffff, #f3f6f8);
+        border-radius: 12px;
+        padding: 10px 12px;
         font-size: 0.88rem;
+        font-weight: 600;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
       }
 
       .links {
@@ -362,8 +366,8 @@ const meta = {
     <section class="hero" id="home">
       <div class="menu">
         <div class="lang-switch" role="group" aria-label="Language switcher">
-          <button type="button" class="lang-btn is-active" data-language-option="tr" aria-pressed="true">TR</button>
-          <button type="button" class="lang-btn" data-language-option="en" aria-pressed="false">EN</button>
+          <button type="button" class="lang-btn" data-language-option="tr" aria-pressed="false">TR</button>
+          <button type="button" class="lang-btn is-active" data-language-option="en" aria-pressed="true">EN</button>
           <button type="button" class="lang-btn" data-language-option="de" aria-pressed="false">DE</button>
         </div>
       </div>
@@ -390,7 +394,7 @@ const meta = {
         <h2 id="stack-title-text">{initial.stackTitle}</h2>
         <ul class="stack" id="stack-list">
           {initial.stack.map((item) => (
-            <li>{item}</li>
+            <li class="stack-item">{item}</li>
           ))}
         </ul>
       </section>
@@ -523,6 +527,7 @@ const meta = {
         stackList.replaceChildren();
         for (let i = 0; i < items.length; i += 1) {
           const li = document.createElement('li');
+          li.className = 'stack-item';
           li.textContent = items[i];
           stackList.appendChild(li);
         }
@@ -552,7 +557,7 @@ const meta = {
       }
 
       function applyLanguage(lang) {
-        const content = TRANSLATIONS[lang] || TRANSLATIONS.tr;
+        const content = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
         roleText.textContent = content.role;
         heroSubText.textContent = content.heroSub;
@@ -574,30 +579,9 @@ const meta = {
         localStorage.setItem('preferredLang', lang);
       }
 
-      function detectBrowserLanguage() {
-        const candidates = [];
-        if (Array.isArray(navigator.languages)) {
-          candidates.push(...navigator.languages);
-        }
-        if (navigator.language) {
-          candidates.push(navigator.language);
-        }
-
-        for (let i = 0; i < candidates.length; i += 1) {
-          const value = candidates[i];
-          if (!value) continue;
-          const lower = value.toLowerCase();
-          if (lower.indexOf('tr') === 0) return 'tr';
-          if (lower.indexOf('de') === 0) return 'de';
-          if (lower.indexOf('en') === 0) return 'en';
-        }
-
-        return 'tr';
-      }
-
       function initialiseLanguage() {
         const stored = localStorage.getItem('preferredLang');
-        const startLang = SUPPORTED_LANGS.indexOf(stored) !== -1 ? stored : detectBrowserLanguage();
+        const startLang = SUPPORTED_LANGS.indexOf(stored) !== -1 ? stored : 'en';
         applyLanguage(startLang);
 
         for (let i = 0; i < languageButtons.length; i += 1) {
