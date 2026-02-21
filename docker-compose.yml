@@ -1,0 +1,13 @@
+services:
+  cv-site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SITE_URL: "https://muslumguzel.com"
+        SITE_BASE: "/"
+    image: cv-site:latest
+    container_name: cv-site
+    ports:
+      - "8080:80"
+    restart: unless-stopped

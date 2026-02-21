@@ -125,6 +125,20 @@ This static site can be deployed to:
 - **AWS S3 + CloudFront**
 - Any static hosting service
 
+### Deploy on VPS with Docker
+```bash
+# Build and run on port 8080
+docker compose up -d --build
+```
+
+Open: `http://<VPS_IP>:8080`
+
+Notes:
+- `docker-compose.yml` builds with `SITE_BASE=/` for root path deployment.
+- If needed, change build args in `docker-compose.yml`:
+  - `SITE_URL` -> your domain
+  - `SITE_BASE` -> subpath (e.g. `/cv-site`)
+
 ### Deploy to Vercel
 ```bash
 npm i -g vercel
