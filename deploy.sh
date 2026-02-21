@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-BRANCH="${DEPLOY_BRANCH:-master}"
-REMOTE="${DEPLOY_REMOTE:-origin}"
-HOST_PORT="${HOST_PORT:-8080}"
-SITE_BASE="${SITE_BASE:-/}"
-SITE_URL="${SITE_URL:-http://localhost:${HOST_PORT}}"
-COMPOSE_FILE="${COMPOSE_FILE:-docker-compose.yml}"
-
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 require_cmd() {
@@ -32,6 +25,20 @@ if [[ ! -d .git ]]; then
   exit 1
 fi
 
+if [[ -f .env ]]; then
+  set -a
+  # shellcheck disable=SC1091
+  source ./.env
+  set +a
+fi
+
+BRANCH="${DEPLOY_BRANCH:-master}"
+REMOTE="${DEPLOY_REMOTE:-origin}"
+HOST_PORT="${HOST_PORT:-8080}"
+SITE_BASE="${SITE_BASE:-/}"
+SITE_URL="${SITE_URL:-http://localhost:${HOST_PORT}}"
+COMPOSE_FILE="${COMPOSE_FILE:-docker-compose.yml}"
+
 if [[ -n "$(git status --porcelain)" ]]; then
   echo "Error: Working tree is not clean. Commit/stash changes before deploy." >&2
   exit 1
@@ -55,6 +62,9 @@ if [[ ! -f "$COMPOSE_FILE" ]]; then
 fi
 
 export HOST_PORT SITE_BASE SITE_URL
+
+echo "==> Stopping existing containers for this project..."
+docker compose -f "$COMPOSE_FILE" down --remove-orphans
 
 echo "==> Building and starting containers..."
 docker compose -f "$COMPOSE_FILE" up -d --build --remove-orphans
