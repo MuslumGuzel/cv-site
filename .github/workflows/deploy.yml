@@ -2,8 +2,11 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ master ]
+    branches: [ portfolio-cv ]
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -18,13 +21,20 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
+
+      - name: Verify public folder does not contain sensitive documents
+        run: npm run check:no-sensitive-docs
 
       - name: Build
-        run: pnpm build
+        run: npm run build
+
+      - name: Verify build output does not contain sensitive documents
+        run: node scripts/check-no-sensitive-docs.mjs dist
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
-          branch: master
+          branch: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }}

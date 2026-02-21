@@ -3,6 +3,8 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "check:no-sensitive-docs": "node scripts/check-no-sensitive-docs.mjs public",
+    "prebuild": "npm run check:no-sensitive-docs",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",

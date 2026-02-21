@@ -1,546 +1,601 @@
 ---
 import '../styles/global.css';
-import PortfolioView from '../components/PortfolioView.astro';
 
 const translations = {
   tr: {
-    metaDescription:
-      '10+ yıllık deneyimiyle .NET Core ve React tabanlı kurumsal uygulamalar geliştiren kıdemli yazılım geliştiricisi.',
-    hero: {
-      roleLabel: 'Senior Software Developer',
-      title: 'Kıdemli Yazılım Geliştirici',
-      subtitle:
-        '.NET Core ve React ile kurumsal uygulamalar geliştiriyor, performans optimizasyonu ve CI/CD otomasyonu üzerine çalışıyorum.',
-      availability: 'Yeni tam zamanlı veya hibrit rollere açık',
-      primaryAction: 'Profesyonel deneyim',
-      secondaryAction: 'CV talebi gönder',
+    meta: {
+      title: 'Müslüm GÜZEL · Software Developer',
+      description: 'Sade teknik profil: isim, meslek, ne iş yaptığı ve tech stack.',
     },
-    metrics: [
-      { label: 'Deneyim', value: '10+ yıl', detail: 'kurumsal yazılım' },
-      { label: 'Performans iyileştirme', value: '%40', detail: 'API yanıt süresi' },
-      { label: 'Hata çözüm süresi', value: '%30', detail: 'CI/CD & debugging' },
+    role: 'Software Developer',
+    heroSub: '.NET Core | React | Go | API Entegrasyonları',
+    aboutTitle: 'Ne İş Yapıyorum',
+    summary:
+      'Kurumsal uygulamalar ve entegrasyon katmanlarında .NET, React, Go ve API tabanlı sistemlerle çalışıyorum.',
+    whatIDo:
+      'Sade ve sürdürülebilir yazılım geliştirme yaklaşımıyla backend, frontend ve AI destekli entegrasyon akışlarında üretim yapıyorum.',
+    stackTitle: 'Tech Stack',
+    stack: [
+      '.NET Core / C#',
+      'React',
+      'Go',
+      'REST API',
+      'MCP / LLM Integrations',
+      'CI/CD',
+      'Azure DevOps',
+      'Jira / Confluence',
+      'SonarQube',
+      'GitHub Copilot',
     ],
-    aside: {
-      focusTitle: 'Teknik odaklarım',
-      focusDescription:
-        'Kurumsal uygulamaları geliştirmede backend ve frontend sorumluluklarını birlikte üstleniyor, kod kalitesi ve dokümantasyonu önceliklendiriyorum.',
-      focusListTitle: 'Güncel çalışma başlıkları',
-      focusList: [
-        '.NET Core servisleri ve React tabanlı arayüzler',
-        'CI/CD otomasyonu ve kod gözden geçirme süreçleri',
-        'Performans izleme, hata ayıklama ve bilgi paylaşımı',
-      ],
-      locationLabel: 'Konum',
-      locationValue: 'İstanbul, Türkiye · Remote / Hybrid',
-      profileLabel: 'LinkedIn',
-      profileLink: 'https://www.linkedin.com/in/muslum-guzel-2b60037a',
-    },
-    experienceSection: {
-      navLabel: 'Deneyim',
-      label: 'Deneyim',
-      title: 'Kurumsal platformlarda odaklı kariyer',
-      description:
-        'Her rolde backend ve frontend sorumluluklarını birlikte üstlendim; performans, süreç ve dokümantasyon iyileştirmelerine odaklandım.',
-    },
-    experiences: [
-      {
-        company: 'Turkish Airlines Technology',
-        role: 'Software Developer',
-        period: 'Ekim 2020 → Günümüz',
-        description:
-          'React Admin ve .NET Core tabanlı iç uygulamalar geliştirerek operasyon ekiplerini destekliyorum.',
-        highlights: [
-          '5+ departmanda kullanılan web uygulamalarını geliştirdim ve devreye aldım.',
-          'CI/CD ve yapılandırılmış debugging ile hata çözüm süresini %30 azalttım.',
-          'Takımdaki junior geliştiricilere mentorluk yaptım ve dokümantasyon hazırladım.',
-        ],
-      },
-      {
-        company: 'Turkcell Teknoloji',
-        role: 'Software Developer',
-        period: 'Şubat 2018 → Ekim 2020',
-        description:
-          'ONENT müşteri bilgi sistemini modernleştiren ekipte hem backend hem frontend tarafında görev aldım.',
-        highlights: [
-          'Entity Framework optimizasyonlarıyla API yanıt sürelerini %40 hızlandırdım.',
-          'SCRUM süreçlerine otomatik testleri dahil ettim.',
-          'React tabanlı yönetim arayüzleri için yeniden kullanılabilir komponentler geliştirdim.',
-        ],
-      },
-      {
-        company: 'Vizyoneks Information Technologies',
-        role: 'Software Developer',
-        period: 'Eylül 2015 → Şubat 2018',
-        description:
-          'LIFEIN kurumsal platformunu Ext.Net ve ASP.NET Web Forms ile geliştiren çekirdek ekipteydim.',
-        highlights: [
-          'Oracle tarafında yüksek hacimli işlemleri destekleyen prosedürler tasarladım.',
-          'Modüler ön yüz mimarisiyle bakım maliyetini %20 azalttım.',
-          'Dağıtık servis entegrasyonları için yeniden kullanılabilir komponentler hazırladım.',
-        ],
-      },
-      {
-        company: 'DDI Technology',
-        role: 'Software Developer',
-        period: 'Mart 2014 → Eylül 2015',
-        description:
-          'Kurumsal belge işleme süreçlerini otomatikleştiren çözümler üzerinde çalıştım.',
-        highlights: [
-          'KOFAX entegrasyonlu belge işleme araçlarını sıfırdan geliştirdim.',
-          'Gerçek zamanlı güncellemeler için WCF servislerini devreye aldım.',
-          'Uzun vadeli kullanılan ölçeklenebilir servis bileşenleri geliştirdim.',
-        ],
-      },
-      {
-        company: 'Dream R&D',
-        role: 'Software Developer',
-        period: 'Haziran 2013 → Şubat 2014',
-        description:
-          'Ar-Ge odaklı prototip projelerde modern araç ve çerçeveleri deneyimledim.',
-        highlights: [
-          'Farklı sektörlere yönelik PoC uygulamalarına katkıda bulundum.',
-          'Yeni teknolojilerin uygulanabilirliğini test eden prototipler geliştirdim.',
-        ],
-      },
-    ],
-    projectsSection: {
-      navLabel: 'Projeler',
-      label: 'Seçili Çalışmalar',
-      title: 'Öne çıkan sistem çalışmaları',
-      description:
-        'Büyük ölçekte kullanılan uygulamaların performans, bakım ve süreç taraflarını iyileştiren projeler.',
-      caseLabel: 'Detay',
-      impactLabel: 'Etkisi',
-    },
-    projects: [
-      {
-        name: 'Operasyonel İç Uygulamalar',
-        detail:
-          'Türk Hava Yolları Teknoloji bünyesinde React Admin ve .NET Core ile geliştirilen süreç otomasyon araçları.',
-        impact: 'Beşten fazla departmanda günlük operasyonlarda kullanılan iç ürünler olarak aktif.',
-        stack: ['React Admin', '.NET Core', 'CI/CD', 'Azure DevOps'],
-      },
-      {
-        name: 'ONENT Müşteri Bilgi Sistemi',
-        detail:
-          'Turkcell müşteri bilgilerinin yönetildiği kritik uygulamanın front ve backend modernizasyonu.',
-        impact:
-          'Entity Framework iyileştirmeleriyle yanıt süreleri %40 azaldı, SCRUM süreçlerine otomatik testler eklendi.',
-        stack: ['.NET Core', 'Entity Framework', 'React', 'Automated Testing'],
-      },
-      {
-        name: 'LIFEIN Kurumsal Platformu',
-        detail:
-          'Ext.Net ve ASP.NET Web Forms tabanlı, yüksek hacimli işlem yapan iş yönetim platformu.',
-        impact: 'Modüler mimari ile bakım maliyeti %20 düştü, Oracle prosedürleri yüksek performans sağladı.',
-        stack: ['Ext.Net', 'ASP.NET Web Forms', 'Oracle', 'SOLID'],
-      },
-    ],
-    skillsSection: {
-      navLabel: 'Uzmanlık',
-      label: 'Uzmanlık',
-      title: 'Teknik odak alanları',
-      description: 'Kod kalitesi, mimari prensipler ve ekip süreçlerinin birlikte yönetildiği çalışmalar.',
-    },
-    skillGroups: [
-      {
-        title: 'Diller & Frameworkler',
-        items: ['.NET Core', 'C#', 'React', 'JavaScript', 'Ext.Net', 'KnockoutJS'],
-      },
-      {
-        title: 'Mimari & Prensipler',
-        items: ['SOLID', 'Clean Architecture', 'Design Patterns', 'Microservices'],
-      },
-      {
-        title: 'Veri & Altyapı',
-        items: ['Oracle', 'Entity Framework', 'RESTful API tasarımı', 'SQL optimizasyonu'],
-      },
-      {
-        title: 'Ekip & Süreç',
-        items: ['Agile / SCRUM', 'CI/CD', 'TDD', 'Dokümantasyon ve mentorluk'],
-      },
-    ],
-    contactSection: {
-      navLabel: 'İletişim',
-      label: 'İletişim',
-      title: 'Detaylı özgeçmiş veya referans talebi için bana ulaşabilirsiniz.',
-      description:
-        '.NET Core ve React deneyimi arayan ekiplerle görüşmeye açığım. E-posta veya telefon üzerinden iletişime geçebilirsiniz.',
-      note: 'Referans bilgileri talep üzerine paylaşılacaktır.',
-      email: 'guzel.muslum8@gmail.com',
-      headerCta: 'İletişime Geç',
-      languageLabel: 'Dil seçimi',
-      footerNote: 'Kurumsal yazılım geliştirme',
-    },
-    socialLinks: [
-      { label: 'E-posta', href: 'mailto:guzel.muslum8@gmail.com', external: false },
-      { label: 'Telefon', href: 'tel:+905413197602', external: false },
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a', external: true },
-      { label: 'GitHub', href: 'https://github.com/muslumguzel', external: true },
-      { label: 'Medium', href: 'https://medium.com/@muslumguzel', external: true },
-    ],
-    languageOptions: [
-      { value: 'tr', label: 'Türkçe', abbreviation: 'TR', flag: '🇹🇷' },
-      { value: 'en', label: 'English', abbreviation: 'EN', flag: '🇺🇸' },
+    linksTitle: 'Bağlantılar',
+    links: [
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a' },
+      { label: 'GitHub', href: 'https://github.com/muslumguzel' },
+      { label: 'Medium', href: 'https://medium.com/@muslumguzel' },
     ],
   },
   en: {
-    metaDescription:
-      'Senior software developer with 10+ years delivering .NET Core and React enterprise applications, focusing on performance optimisation and CI/CD automation.',
-    hero: {
-      roleLabel: 'Senior Software Developer',
-      title: 'Senior Software Engineer',
-      subtitle:
-        'Building enterprise applications with .NET Core and React, improving performance and automation across delivery pipelines.',
-      availability: 'Open to new full-time or hybrid roles',
-      primaryAction: 'Experience',
-      secondaryAction: 'Request CV',
+    meta: {
+      title: 'Muslum Guzel · Software Developer',
+      description: 'Minimal technical profile with role, focus, and tech stack.',
     },
-    metrics: [
-      { label: 'Experience', value: '10+ years', detail: 'enterprise software' },
-      { label: 'Performance gain', value: '40%', detail: 'faster API response' },
-      { label: 'Bug resolution', value: '30%', detail: 'faster with CI/CD' },
+    role: 'Software Developer',
+    heroSub: '.NET Core | React | Go | API Integrations',
+    aboutTitle: 'What I Do',
+    summary:
+      'I work on enterprise applications and integration layers using .NET, React, Go, and API-driven systems.',
+    whatIDo:
+      'I focus on maintainable software delivery across backend, frontend, and AI-assisted integration flows.',
+    stackTitle: 'Tech Stack',
+    stack: [
+      '.NET Core / C#',
+      'React',
+      'Go',
+      'REST API',
+      'MCP / LLM Integrations',
+      'CI/CD',
+      'Azure DevOps',
+      'Jira / Confluence',
+      'SonarQube',
+      'GitHub Copilot',
     ],
-    aside: {
-      focusTitle: 'Focus areas',
-      focusDescription:
-        'Delivering backend and frontend features together, maintaining clean codebases and reliable documentation.',
-      focusListTitle: 'Current responsibilities',
-      focusList: [
-        '.NET Core services and React-based admin tools',
-        'CI/CD automation and structured code reviews',
-        'Performance monitoring, debugging, and knowledge sharing',
-      ],
-      locationLabel: 'Location',
-      locationValue: 'Istanbul, Turkey · Remote / Hybrid',
-      profileLabel: 'LinkedIn',
-      profileLink: 'https://www.linkedin.com/in/muslum-guzel-2b60037a',
-    },
-    experienceSection: {
-      navLabel: 'Experience',
-      label: 'Experience',
-      title: 'Career across enterprise platforms',
-      description:
-        'Led backend and frontend initiatives in every role, improving reliability, performance, and internal team processes.',
-    },
-    experiences: [
-      {
-        company: 'Turkish Airlines Technology',
-        role: 'Software Developer',
-        period: 'Oct 2020 → Present',
-        description:
-          'Delivering React Admin and .NET Core applications that streamline daily operations for internal teams.',
-        highlights: [
-          'Launched internal web apps adopted by 5+ departments.',
-          'Cut bug resolution time by 30% through CI/CD and structured debugging.',
-          'Mentored junior developers and prepared team documentation.',
-        ],
-      },
-      {
-        company: 'Turkcell Technology',
-        role: 'Software Developer',
-        period: 'Feb 2018 → Oct 2020',
-        description:
-          'Modernised the ONENT customer information system across backend and frontend layers.',
-        highlights: [
-          'Improved API response speed by 40% via Entity Framework optimisation.',
-          'Integrated automated testing into SCRUM release cycles.',
-          'Built reusable React components for admin interfaces.',
-        ],
-      },
-      {
-        company: 'Vizyoneks Information Technologies',
-        role: 'Software Developer',
-        period: 'Sep 2015 → Feb 2018',
-        description:
-          'Core contributor to the LIFEIN enterprise platform using Ext.Net and ASP.NET Web Forms.',
-        highlights: [
-          'Designed Oracle procedures supporting high-volume transactions.',
-          'Reduced maintenance effort by 20% with modular front-end architecture.',
-          'Delivered reusable components for distributed service integrations.',
-        ],
-      },
-      {
-        company: 'DDI Technology',
-        role: 'Software Developer',
-        period: 'Mar 2014 → Sep 2015',
-        description:
-          'Developed automation solutions for enterprise document processing.',
-        highlights: [
-          'Built KOFAX-integrated document processing tools from scratch.',
-          'Deployed WCF services for real-time synchronisation.',
-          'Delivered scalable service components adopted long term.',
-        ],
-      },
-      {
-        company: 'Dream R&D',
-        role: 'Software Developer',
-        period: 'Jun 2013 → Feb 2014',
-        description:
-          'Worked on R&D prototypes, testing modern frameworks in rapid iterations.',
-        highlights: [
-          'Contributed to proof-of-concept applications across industries.',
-          'Built prototypes to evaluate emerging technologies.',
-        ],
-      },
+    linksTitle: 'Links',
+    links: [
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a' },
+      { label: 'GitHub', href: 'https://github.com/muslumguzel' },
+      { label: 'Medium', href: 'https://medium.com/@muslumguzel' },
     ],
-    projectsSection: {
-      navLabel: 'Projects',
-      label: 'Selected Work',
-      title: 'Systems with measurable impact',
-      description:
-        'Initiatives that improved performance, maintainability, and delivery workflows for large-scale applications.',
-      caseLabel: 'Details',
-      impactLabel: 'Impact',
+  },
+  de: {
+    meta: {
+      title: 'Muslum Guzel · Softwareentwickler',
+      description: 'Minimales technisches Profil mit Rolle, Fokus und Tech-Stack.',
     },
-    projects: [
-      {
-        name: 'Operational Internal Apps',
-        detail:
-          'Process automation tools built with React Admin and .NET Core for Turkish Airlines Technology.',
-        impact: 'Actively used each day across more than five departments.',
-        stack: ['React Admin', '.NET Core', 'CI/CD', 'Azure DevOps'],
-      },
-      {
-        name: 'ONENT Customer Information System',
-        detail:
-          'Frontend and backend modernisation of Turkcell’s customer information platform.',
-        impact:
-          'Reduced response times by 40% and introduced automated tests into the SCRUM cadence.',
-        stack: ['.NET Core', 'Entity Framework', 'React', 'Automated Testing'],
-      },
-      {
-        name: 'LIFEIN Enterprise Platform',
-        detail:
-          'High-volume business management platform delivered with Ext.Net and ASP.NET Web Forms.',
-        impact:
-          'Lowered maintenance overhead by 20% while maintaining performance with Oracle procedures.',
-        stack: ['Ext.Net', 'ASP.NET Web Forms', 'Oracle', 'SOLID'],
-      },
+    role: 'Softwareentwickler',
+    heroSub: '.NET Core | React | Go | API-Integrationen',
+    aboutTitle: 'Was Ich Mache',
+    summary:
+      'Ich arbeite an Enterprise-Anwendungen und Integrationsschichten mit .NET, React, Go und API-basierten Systemen.',
+    whatIDo:
+      'Mein Fokus liegt auf wartbarer Umsetzung in Backend-, Frontend- und KI-gestützten Integrationsabläufen.',
+    stackTitle: 'Tech Stack',
+    stack: [
+      '.NET Core / C#',
+      'React',
+      'Go',
+      'REST API',
+      'MCP / LLM Integrations',
+      'CI/CD',
+      'Azure DevOps',
+      'Jira / Confluence',
+      'SonarQube',
+      'GitHub Copilot',
     ],
-    skillsSection: {
-      navLabel: 'Skills',
-      label: 'Skills',
-      title: 'Technical coverage',
-      description:
-        'Balancing code quality, architecture, and team practices in enterprise deliveries.',
-    },
-    skillGroups: [
-      {
-        title: 'Languages & Frameworks',
-        items: ['.NET Core', 'C#', 'React', 'JavaScript', 'Ext.Net', 'KnockoutJS'],
-      },
-      {
-        title: 'Architecture & Principles',
-        items: ['SOLID', 'Clean Architecture', 'Design Patterns', 'Microservices'],
-      },
-      {
-        title: 'Data & Infrastructure',
-        items: ['Oracle', 'Entity Framework', 'REST API design', 'SQL optimisation'],
-      },
-      {
-        title: 'Team & Process',
-        items: ['Agile / SCRUM', 'CI/CD', 'TDD', 'Documentation & mentoring'],
-      },
-    ],
-    contactSection: {
-      navLabel: 'Contact',
-      label: 'Contact',
-      title: 'Get in touch for detailed CV or references.',
-      description:
-        'Open to teams seeking .NET Core and React experience. Reach out via email or phone.',
-      note: 'References available upon request.',
-      email: 'guzel.muslum8@gmail.com',
-      headerCta: 'Contact',
-      languageLabel: 'Language switcher',
-      footerNote: 'Enterprise software engineering',
-    },
-    socialLinks: [
-      { label: 'Email', href: 'mailto:guzel.muslum8@gmail.com', external: false },
-      { label: 'Phone', href: 'tel:+905413197602', external: false },
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a', external: true },
-      { label: 'GitHub', href: 'https://github.com/muslumguzel', external: true },
-      { label: 'Medium', href: 'https://medium.com/@muslumguzel', external: true },
-    ],
-    languageOptions: [
-      { value: 'tr', label: 'Turkish', abbreviation: 'TR', flag: '🇹🇷' },
-      { value: 'en', label: 'English', abbreviation: 'EN', flag: '🇺🇸' },
+    linksTitle: 'Links',
+    links: [
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a' },
+      { label: 'GitHub', href: 'https://github.com/muslumguzel' },
+      { label: 'Medium', href: 'https://medium.com/@muslumguzel' },
     ],
   },
 };
 
-const defaultLang = 'tr';
+const defaultLang = 'en';
+const initial = translations[defaultLang];
+const profileName = 'Müslüm GÜZEL';
+
 const meta = {
-  title: 'Müslüm GÜZEL · Senior Software Engineer',
-  description: translations[defaultLang].metaDescription,
+  title: initial.meta.title,
+  description: initial.meta.description,
   url: 'https://muslumguzel.com',
 };
-
-const base = (import.meta.env.BASE_URL ?? '/').replace(/\/+$/, '');
-const faviconUrl = `${base || ''}/favicon.svg`;
 ---
 
 <!DOCTYPE html>
-<html lang={defaultLang} class="scroll-smooth">
+<html lang={defaultLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{meta.title}</title>
     <meta name="description" content={meta.description} />
-    <meta name="author" content="Müslüm GÜZEL" />
-    <meta name="keywords" content=".NET, React, yazılım geliştirici, İstanbul, cloud architect" />
+    <meta name="author" content={profileName} />
+    <meta name="keywords" content=".NET, React, Go, MCP, software developer" />
     <link rel="canonical" href={meta.url} />
-    <link rel="icon" type="image/svg+xml" href={faviconUrl} />
+    <link rel="icon" type="image/svg+xml" href="/cv-site/favicon.svg" />
 
     <meta property="og:title" content={meta.title} />
     <meta property="og:description" content={meta.description} />
     <meta property="og:type" content="profile" />
     <meta property="og:url" content={meta.url} />
-    <meta property="profile:first_name" content="Müslüm" />
-    <meta property="profile:last_name" content="GÜZEL" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={meta.title} />
-    <meta name="twitter:description" content={meta.description} />
 
     <style>
       :root {
-        color-scheme: dark;
+        --paper: #f4f5f6;
+        --ink: #172228;
+        --muted: #5f6c73;
+        --line: #d9dde1;
       }
 
-      body[data-active-lang='tr'] [data-view='tr'] {
-        display: block;
+      * {
+        box-sizing: border-box;
       }
 
-      body[data-active-lang='tr'] [data-view='en'] {
-        display: none;
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: 'Avenir Next', 'Gill Sans', 'Trebuchet MS', sans-serif;
       }
 
-      body[data-active-lang='en'] [data-view='tr'] {
-        display: none;
+      .hero {
+        position: relative;
+        min-height: 84vh;
+        overflow: hidden;
+        background:
+          linear-gradient(180deg, rgba(7, 20, 33, 0.5), rgba(9, 24, 39, 0.75)),
+          radial-gradient(120% 90% at 20% 18%, rgba(161, 196, 220, 0.42), transparent 60%),
+          linear-gradient(155deg, #2a4862 0%, #1a334a 42%, #12273c 100%);
       }
 
-      body[data-active-lang='en'] [data-view='en'] {
-        display: block;
+      .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          repeating-linear-gradient(-19deg, rgba(220, 236, 247, 0.2) 0 7px, rgba(145, 173, 191, 0.06) 7px 15px),
+          linear-gradient(90deg, rgba(8, 18, 31, 0.2), rgba(8, 18, 31, 0.55));
+        mix-blend-mode: screen;
+        opacity: 0.5;
+      }
+
+      .hero::after {
+        content: '';
+        position: absolute;
+        left: 19%;
+        right: 22%;
+        top: 12%;
+        bottom: -8%;
+        background:
+          linear-gradient(180deg, rgba(214, 233, 245, 0.38), rgba(196, 220, 238, 0.06)),
+          repeating-linear-gradient(-15deg, rgba(229, 241, 249, 0.35) 0 6px, rgba(158, 187, 206, 0.22) 6px 12px);
+        clip-path: polygon(19% 0%, 34% 7%, 48% 2%, 65% 10%, 80% 0%, 100% 24%, 84% 49%, 70% 74%, 60% 100%, 38% 100%, 31% 78%, 16% 62%, 0% 34%);
+        opacity: 0.46;
+        filter: blur(0.5px);
+      }
+
+      .menu {
+        position: absolute;
+        right: 28px;
+        top: 20px;
+        z-index: 4;
+      }
+
+      .lang-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        border: 1px solid rgba(238, 245, 249, 0.35);
+        border-radius: 999px;
+        padding: 4px;
+        background: rgba(10, 24, 37, 0.32);
+        backdrop-filter: blur(4px);
+      }
+
+      .lang-btn {
+        appearance: none;
+        border: 0;
+        background: transparent;
+        color: rgba(236, 244, 248, 0.86);
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-weight: 700;
+        border-radius: 999px;
+        padding: 7px 10px;
+        cursor: pointer;
+      }
+
+      .lang-btn.is-active {
+        background: rgba(244, 249, 252, 0.96);
+        color: #15222b;
+      }
+
+      .hero-center {
+        position: relative;
+        z-index: 3;
+        min-height: 84vh;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 56px 22px;
+        color: #f2f6f8;
+      }
+
+      .title-wrap {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+      }
+
+      .title-wrap::before,
+      .title-wrap::after {
+        content: '';
+        width: min(520px, 74vw);
+        height: 1px;
+        background: rgba(240, 246, 250, 0.7);
+      }
+
+      .role {
+        margin: 0;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+        color: rgba(238, 245, 249, 0.85);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .hero-sub {
+        margin: 18px 0 0;
+        color: rgba(228, 239, 246, 0.9);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: clamp(0.72rem, 1.5vw, 1rem);
+      }
+
+      .content {
+        max-width: 1020px;
+        margin: -86px auto 56px;
+        padding: 0 24px;
+        position: relative;
+        z-index: 5;
+      }
+
+      .card {
+        background: #f8f9fa;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 24px 48px -34px rgba(16, 31, 44, 0.28);
+      }
+
+      .card + .card {
+        margin-top: 14px;
+      }
+
+      .card h2 {
+        margin: 0 0 10px;
+        font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
+        font-size: 1.7rem;
+        letter-spacing: -0.01em;
+      }
+
+      .card p {
+        margin: 0;
+        color: #3f4d54;
+        line-height: 1.65;
+      }
+
+      .stack {
+        margin: 18px 0 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 10px;
+        padding: 0;
+      }
+
+      .stack-item {
+        list-style: none;
+        border: 1px solid #d0d7dc;
+        color: #1a2a33;
+        background: linear-gradient(180deg, #ffffff, #f3f6f8);
+        border-radius: 12px;
+        padding: 10px 12px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+      }
+
+      .links {
+        margin-top: 12px;
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .links a {
+        color: #1b3d51;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(27, 61, 81, 0.3);
+        padding-bottom: 1px;
+        font-weight: 560;
+      }
+
+      @media (max-width: 760px) {
+        .hero,
+        .hero-center {
+          min-height: 72vh;
+        }
+
+        .menu {
+          right: 14px;
+          top: 14px;
+        }
+
+        .content {
+          margin-top: -58px;
+          padding: 0 14px;
+        }
+
+        .card {
+          padding: 22px;
+        }
       }
     </style>
   </head>
-  <body class="min-h-screen bg-slate-950 text-slate-100 antialiased" data-active-lang={defaultLang}>
-    <div id="view-container">
-      <PortfolioView content={translations[defaultLang]} lang="tr" />
-    </div>
+  <body data-active-lang={defaultLang}>
+    <section class="hero" id="home">
+      <div class="menu">
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <button type="button" class="lang-btn" data-language-option="tr" aria-pressed="false">TR</button>
+          <button type="button" class="lang-btn is-active" data-language-option="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-language-option="de" aria-pressed="false">DE</button>
+        </div>
+      </div>
 
-    <template id="view-en">
-      <PortfolioView content={translations.en} lang="en" />
-    </template>
+      <div class="hero-center">
+        <div>
+          <p class="role" id="role-text">{initial.role}</p>
+          <div class="title-wrap">
+            <h1>{profileName}</h1>
+          </div>
+          <p class="hero-sub" id="hero-sub-text">{initial.heroSub}</p>
+        </div>
+      </div>
+    </section>
+
+    <main class="content">
+      <section class="card" id="about">
+        <h2 id="about-title-text">{initial.aboutTitle}</h2>
+        <p id="summary-text">{initial.summary}</p>
+        <p id="what-i-do-text" style="margin-top: 10px;">{initial.whatIDo}</p>
+      </section>
+
+      <section class="card" id="stack">
+        <h2 id="stack-title-text">{initial.stackTitle}</h2>
+        <ul class="stack" id="stack-list">
+          {initial.stack.map((item) => (
+            <li class="stack-item">{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="card" id="contact">
+        <h2 id="links-title-text">{initial.linksTitle}</h2>
+        <div class="links" id="links-list">
+          {initial.links.map((link) => (
+            <a href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+          ))}
+        </div>
+      </section>
+    </main>
 
     <script is:inline>
-      const SUPPORTED_LANGS = ['tr', 'en'];
-      const viewContainer = document.getElementById('view-container');
-      const renderedViews = { tr: viewContainer.querySelector('[data-view=\"tr\"]') };
-      const DEFAULT_LANG = document.body.dataset.activeLang || 'tr';
+      const TRANSLATIONS = {
+        tr: {
+          meta: {
+            title: 'Müslüm GÜZEL · Software Developer',
+            description: 'Sade teknik profil: isim, meslek, ne iş yaptığı ve tech stack.',
+          },
+          role: 'Software Developer',
+          heroSub: '.NET Core | React | Go | API Entegrasyonları',
+          aboutTitle: 'Ne İş Yapıyorum',
+          summary:
+            'Kurumsal uygulamalar ve entegrasyon katmanlarında .NET, React, Go ve API tabanlı sistemlerle çalışıyorum.',
+          whatIDo:
+            'Sade ve sürdürülebilir yazılım geliştirme yaklaşımıyla backend, frontend ve AI destekli entegrasyon akışlarında üretim yapıyorum.',
+          stackTitle: 'Tech Stack',
+          stack: [
+            '.NET Core / C#',
+            'React',
+            'Go',
+            'REST API',
+            'MCP / LLM Integrations',
+            'CI/CD',
+            'Azure DevOps',
+            'Jira / Confluence',
+            'SonarQube',
+            'GitHub Copilot',
+          ],
+          linksTitle: 'Bağlantılar',
+          links: [
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a' },
+            { label: 'GitHub', href: 'https://github.com/muslumguzel' },
+            { label: 'Medium', href: 'https://medium.com/@muslumguzel' },
+          ],
+        },
+        en: {
+          meta: {
+            title: 'Muslum Guzel · Software Developer',
+            description: 'Minimal technical profile with role, focus, and tech stack.',
+          },
+          role: 'Software Developer',
+          heroSub: '.NET Core | React | Go | API Integrations',
+          aboutTitle: 'What I Do',
+          summary:
+            'I work on enterprise applications and integration layers using .NET, React, Go, and API-driven systems.',
+          whatIDo:
+            'I focus on maintainable software delivery across backend, frontend, and AI-assisted integration flows.',
+          stackTitle: 'Tech Stack',
+          stack: [
+            '.NET Core / C#',
+            'React',
+            'Go',
+            'REST API',
+            'MCP / LLM Integrations',
+            'CI/CD',
+            'Azure DevOps',
+            'Jira / Confluence',
+            'SonarQube',
+            'GitHub Copilot',
+          ],
+          linksTitle: 'Links',
+          links: [
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a' },
+            { label: 'GitHub', href: 'https://github.com/muslumguzel' },
+            { label: 'Medium', href: 'https://medium.com/@muslumguzel' },
+          ],
+        },
+        de: {
+          meta: {
+            title: 'Muslum Guzel · Softwareentwickler',
+            description: 'Minimales technisches Profil mit Rolle, Fokus und Tech-Stack.',
+          },
+          role: 'Softwareentwickler',
+          heroSub: '.NET Core | React | Go | API-Integrationen',
+          aboutTitle: 'Was Ich Mache',
+          summary:
+            'Ich arbeite an Enterprise-Anwendungen und Integrationsschichten mit .NET, React, Go und API-basierten Systemen.',
+          whatIDo:
+            'Mein Fokus liegt auf wartbarer Umsetzung in Backend-, Frontend- und KI-gestützten Integrationsabläufen.',
+          stackTitle: 'Tech Stack',
+          stack: [
+            '.NET Core / C#',
+            'React',
+            'Go',
+            'REST API',
+            'MCP / LLM Integrations',
+            'CI/CD',
+            'Azure DevOps',
+            'Jira / Confluence',
+            'SonarQube',
+            'GitHub Copilot',
+          ],
+          linksTitle: 'Links',
+          links: [
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a' },
+            { label: 'GitHub', href: 'https://github.com/muslumguzel' },
+            { label: 'Medium', href: 'https://medium.com/@muslumguzel' },
+          ],
+        },
+      };
 
-      function getTemplate(lang) {
-        const template = document.getElementById(`view-${lang}`);
-        return template ? template.content.cloneNode(true) : null;
+      const SUPPORTED_LANGS = ['tr', 'en', 'de'];
+      const roleText = document.getElementById('role-text');
+      const heroSubText = document.getElementById('hero-sub-text');
+      const aboutTitleText = document.getElementById('about-title-text');
+      const summaryText = document.getElementById('summary-text');
+      const whatIDoText = document.getElementById('what-i-do-text');
+      const stackTitleText = document.getElementById('stack-title-text');
+      const stackList = document.getElementById('stack-list');
+      const linksTitleText = document.getElementById('links-title-text');
+      const linksList = document.getElementById('links-list');
+      const languageButtons = document.querySelectorAll('[data-language-option]');
+      const titleElement = document.querySelector('title');
+      const descriptionElement = document.querySelector('meta[name="description"]');
+
+      function renderStack(items) {
+        stackList.replaceChildren();
+        for (let i = 0; i < items.length; i += 1) {
+          const li = document.createElement('li');
+          li.className = 'stack-item';
+          li.textContent = items[i];
+          stackList.appendChild(li);
+        }
       }
 
-      function getStoredPreference() {
-        const stored = localStorage.getItem('preferredLang');
-        if (stored && SUPPORTED_LANGS.indexOf(stored) !== -1) {
-          return stored;
-        }
-        return null;
-      }
-
-      function detectBrowserLanguage() {
-        const languages = navigator.languages;
-        let candidate = null;
-        if (Array.isArray(languages) && languages.length > 0) {
-          candidate = languages[0];
-        }
-        if (!candidate && navigator.language) {
-          candidate = navigator.language;
-        }
-        if (!candidate) {
-          return DEFAULT_LANG;
-        }
-        return candidate.toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en';
-      }
-
-      let activeLang = DEFAULT_LANG;
-
-      function updateToggleState(view, lang) {
-        if (!view) return;
-        const toggles = view.querySelectorAll('[data-language-option]');
-        for (let i = 0; i < toggles.length; i += 1) {
-          const toggle = toggles[i];
-          const value = toggle.getAttribute('data-language-option');
-          const isActive = value === lang;
-          toggle.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-          toggle.classList.toggle('is-active', isActive);
+      function renderLinks(items) {
+        linksList.replaceChildren();
+        for (let i = 0; i < items.length; i += 1) {
+          const link = items[i];
+          const anchor = document.createElement('a');
+          anchor.href = link.href;
+          anchor.textContent = link.label;
+          anchor.target = '_blank';
+          anchor.rel = 'noreferrer';
+          linksList.appendChild(anchor);
         }
       }
 
-      function updateAllToggleStates() {
-        for (const key in renderedViews) {
-          if (Object.prototype.hasOwnProperty.call(renderedViews, key)) {
-            updateToggleState(renderedViews[key], activeLang);
-          }
+      function updateLanguageButtons(activeLang) {
+        for (let i = 0; i < languageButtons.length; i += 1) {
+          const button = languageButtons[i];
+          const lang = button.getAttribute('data-language-option');
+          const isActive = lang === activeLang;
+          button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+          button.classList.toggle('is-active', isActive);
         }
       }
 
-      function bindLanguageControls(view) {
-        if (!view) return;
-        const toggles = view.querySelectorAll('[data-language-option]');
-        for (let i = 0; i < toggles.length; i += 1) {
-          const toggle = toggles[i];
-          if (toggle.getAttribute('data-bound') === 'true') continue;
-          toggle.addEventListener('click', function (event) {
-            const target = event.currentTarget.getAttribute('data-language-option');
-            if (SUPPORTED_LANGS.indexOf(target) !== -1 && target !== activeLang) {
-              setLanguage(target);
-            }
-          });
-          toggle.setAttribute('data-bound', 'true');
-        }
-        updateToggleState(view, activeLang);
-      }
+      function applyLanguage(lang) {
+        const content = TRANSLATIONS[lang] || TRANSLATIONS.en;
 
-      function setLanguage(lang) {
-        if (SUPPORTED_LANGS.indexOf(lang) === -1) return;
-        let view = renderedViews[lang];
+        roleText.textContent = content.role;
+        heroSubText.textContent = content.heroSub;
+        aboutTitleText.textContent = content.aboutTitle;
+        summaryText.textContent = content.summary;
+        whatIDoText.textContent = content.whatIDo;
+        stackTitleText.textContent = content.stackTitle;
+        linksTitleText.textContent = content.linksTitle;
 
-        if (!view) {
-          const fragment = getTemplate(lang);
-          if (!fragment) return;
-          view = fragment.querySelector('[data-view]');
-          renderedViews[lang] = view;
-        }
+        renderStack(content.stack);
+        renderLinks(content.links);
 
-        if (!view) return;
+        titleElement.textContent = content.meta.title;
+        descriptionElement.setAttribute('content', content.meta.description);
 
-        viewContainer.replaceChildren(view);
-        document.body.dataset.activeLang = lang;
         document.documentElement.lang = lang;
-        activeLang = lang;
+        document.body.dataset.activeLang = lang;
+        updateLanguageButtons(lang);
         localStorage.setItem('preferredLang', lang);
-        bindLanguageControls(view);
-        updateAllToggleStates();
       }
 
-      function initialise() {
-        bindLanguageControls(renderedViews.tr);
-        const stored = getStoredPreference();
-        const preferred = stored || detectBrowserLanguage();
-        if (preferred !== activeLang) {
-          setLanguage(preferred);
-        } else {
-          updateAllToggleStates();
+      function initialiseLanguage() {
+        const stored = localStorage.getItem('preferredLang');
+        const startLang = SUPPORTED_LANGS.indexOf(stored) !== -1 ? stored : 'en';
+        applyLanguage(startLang);
+
+        for (let i = 0; i < languageButtons.length; i += 1) {
+          const button = languageButtons[i];
+          button.addEventListener('click', function (event) {
+            const selected = event.currentTarget.getAttribute('data-language-option');
+            if (SUPPORTED_LANGS.indexOf(selected) === -1) return;
+            if (selected === document.body.dataset.activeLang) return;
+            applyLanguage(selected);
+          });
         }
       }
 
-      initialise();
+      initialiseLanguage();
     </script>
   </body>
 </html>

@@ -1,0 +1,13 @@
+services:
+  cv-site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SITE_URL: "${SITE_URL:-http://localhost:8080}"
+        SITE_BASE: "${SITE_BASE:-/}"
+    image: cv-site:latest
+    container_name: cv-site
+    ports:
+      - "${HOST_PORT:-8080}:80"
+    restart: unless-stopped
