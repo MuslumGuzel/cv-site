@@ -1,508 +1,295 @@
 ---
 import '../styles/global.css';
-import PortfolioView from '../components/PortfolioView.astro';
 
-const translations = {
-  tr: {
-    metaDescription:
-      '.NET Core, React, Go ve yapay zeka entegrasyonları odağında teknik geçmiş ve kullanılan teknoloji yığını.',
-    hero: {
-      roleLabel: 'Software Developer',
-      title: 'Teknik Profil',
-      subtitle:
-        'Bu sayfa özgeçmiş formatı yerine teknoloji odağı, genel çalışma alanları ve güncel teknik notları içerir.',
-      status: 'Genel teknik profil',
-      primaryAction: 'Tech Stack',
-      secondaryAction: 'LinkedIn Profili',
-    },
-    aboutSection: {
-      navLabel: 'Genel',
-      label: 'Genel Bilgi',
-      title: 'Kapsam',
-      description:
-        '10+ yıllık yazılım geliştirme deneyimiyle kurumsal sistemlerde backend, frontend ve entegrasyon odaklı teknik katkılar.',
-    },
-    aboutHighlights: [
-      'Çalışma odağı: kurumsal uygulamalar, entegrasyon katmanları ve geliştirici araçları.',
-      'Yaklaşım: sürdürülebilir mimari, tekrar kullanılabilir bileşenler ve dokümantasyon.',
-      'Teknik eksen: .NET ekosistemi, React tabanlı arayüzler ve API odaklı sistemler.',
-      'Son dönemde AI destekli SDLC araç entegrasyonları üzerine yoğunlaşma.',
-    ],
-    stackSection: {
-      navLabel: 'Stack',
-      label: 'Tech Stack',
-      title: 'Kullandığım Teknolojiler',
-      description: 'Projelerde aktif kullandığım dil, framework, altyapı ve araçlar.',
-    },
-    stackGroups: [
-      {
-        title: 'Diller & Frameworkler',
-        items: ['C#', '.NET Core / .NET 3.1', 'Go', 'React', 'JavaScript'],
-      },
-      {
-        title: 'AI & Entegrasyon',
-        items: ['MCP (Model Context Protocol)', 'LLM entegrasyonları', 'Gateway entegrasyonları', 'REST API'],
-      },
-      {
-        title: 'Araçlar & Platformlar',
-        items: ['Jira / TKJira', 'Confluence', 'SonarQube', 'GitHub Copilot', 'Azure DevOps'],
-      },
-      {
-        title: 'Mimari & Süreç',
-        items: ['Clean Architecture', 'Design Patterns', 'CI/CD', 'Agile / SCRUM', 'Dokümantasyon'],
-      },
-    ],
-    recentSection: {
-      navLabel: 'Son Dönem',
-      label: 'Son 10 Ay',
-      title: 'Nisan 2025 Sonrası Teknik Özet',
-      description:
-        'Turkish Technology içinde farklı bir direktörlükte sürdürülen çalışmalarda öne çıkan teknoloji başlıkları.',
-      period: 'Nisan 2025 → Günümüz',
-    },
-    recentHighlights: [
-      '.NET 3.1 tabanlı uygulamaların geliştirme ortamına alınması ve teknik destek süreçleri.',
-      'MCP tabanlı server geliştirmeleri ile şirket içi LLM entegrasyon çalışmaları.',
-      'Jira, TKJira, Confluence ve SonarQube sistemleriyle AI araçlarının entegrasyonu.',
-      'Dokümantasyon ve metrik görünürlüğü için web uygulaması geliştirmeleri.',
-      'Şirket güvenlik standartlarına uygun, tekrar kullanılabilir template proje yapıları.',
-      'Go ile model servis geçitleri ve AI gateway katmanlarında özellik geliştirmeleri.',
-      'GitHub Copilot ve benzeri kod asistanları için lisans/proxy odaklı teknik destek.',
-    ],
-    infoSection: {
-      navLabel: 'Notlar',
-      label: 'Genel Notlar',
-      title: 'Çalışma Prensipleri',
-      description: 'Teknik üretim sürecinde öncelik verilen genel başlıklar.',
-    },
-    infoHighlights: [
-      'Kod kalitesi ve bakım kolaylığı için modüler yaklaşım.',
-      'Tekrarlı işleri azaltan standart template ve süreç tasarımları.',
-      'Ekip içi görünürlük için metrik ve dokümantasyon disiplini.',
-      'Teknik sorunlarda hızlı geri bildirim ve paylaşım kültürü.',
-      'Yapay zeka destekli geliştirme araçlarının kontrollü ve verimli kullanımı.',
-      'İhtiyaca göre backend, frontend ve entegrasyon katmanlarında görev alma.',
-    ],
-    linksSection: {
-      navLabel: 'Bağlantılar',
-      label: 'Bağlantılar',
-      title: 'Profil Bağlantıları',
-      description: 'Teknik içerik ve açık profil bağlantıları.',
-      note: 'Bu sitede doğrudan e-posta veya telefon bilgisi paylaşılmamaktadır.',
-      contactHref: 'https://www.linkedin.com/in/muslum-guzel-2b60037a',
-      contactExternal: true,
-      headerCta: 'LinkedIn',
-      languageLabel: 'Dil seçimi',
-      footerNote: 'Teknik profil',
-    },
-    socialLinks: [
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a', external: true },
-      { label: 'GitHub', href: 'https://github.com/muslumguzel', external: true },
-      { label: 'Medium', href: 'https://medium.com/@muslumguzel', external: true },
-    ],
-    languageOptions: [
-      { value: 'tr', label: 'Türkçe', abbreviation: 'TR', flag: '🇹🇷' },
-      { value: 'en', label: 'English', abbreviation: 'EN', flag: '🇺🇸' },
-      { value: 'de', label: 'Deutsch', abbreviation: 'DE', flag: '🇩🇪' },
-    ],
-  },
-  en: {
-    metaDescription:
-      'Technical profile focused on .NET Core, React, Go, and AI-driven integration work.',
-    hero: {
-      roleLabel: 'Software Developer',
-      title: 'Technical Profile',
-      subtitle:
-        'This page is intentionally not a CV. It presents technology focus, general work areas, and recent technical notes.',
-      status: 'General technical profile',
-      primaryAction: 'Tech Stack',
-      secondaryAction: 'LinkedIn Profile',
-    },
-    aboutSection: {
-      navLabel: 'Overview',
-      label: 'Overview',
-      title: 'Scope',
-      description:
-        '10+ years in software development across enterprise systems, with backend, frontend, and integration contributions.',
-    },
-    aboutHighlights: [
-      'Focus: enterprise applications, integration layers, and developer tooling.',
-      'Approach: sustainable architecture, reusable components, and clear documentation.',
-      'Core axis: .NET ecosystem, React interfaces, and API-centric systems.',
-      'Recent emphasis on AI-enabled SDLC tooling integrations.',
-    ],
-    stackSection: {
-      navLabel: 'Stack',
-      label: 'Tech Stack',
-      title: 'Technologies in Use',
-      description: 'Languages, frameworks, platforms, and tools actively used in projects.',
-    },
-    stackGroups: [
-      {
-        title: 'Languages & Frameworks',
-        items: ['C#', '.NET Core / .NET 3.1', 'Go', 'React', 'JavaScript'],
-      },
-      {
-        title: 'AI & Integration',
-        items: ['MCP (Model Context Protocol)', 'LLM integrations', 'Gateway integrations', 'REST APIs'],
-      },
-      {
-        title: 'Tools & Platforms',
-        items: ['Jira / TKJira', 'Confluence', 'SonarQube', 'GitHub Copilot', 'Azure DevOps'],
-      },
-      {
-        title: 'Architecture & Process',
-        items: ['Clean Architecture', 'Design Patterns', 'CI/CD', 'Agile / SCRUM', 'Documentation'],
-      },
-    ],
-    recentSection: {
-      navLabel: 'Recent',
-      label: 'Last 10 Months',
-      title: 'Technical Summary Since April 2025',
-      description:
-        'Technology topics from work continued under a different directorate in Turkish Technology.',
-      period: 'April 2025 → Present',
-    },
-    recentHighlights: [
-      '.NET 3.1 environment setup and technical support for related applications.',
-      'MCP-based server development for internal LLM integration work.',
-      'Integration efforts across Jira, TKJira, Confluence, and SonarQube with AI tools.',
-      'Web application development for documentation and metric visibility.',
-      'Reusable secure template projects aligned with corporate security standards.',
-      'Feature contributions in Go across model-serving gateways and AI gateway layers.',
-      'License/proxy-focused technical support for GitHub Copilot and similar coding assistants.',
-    ],
-    infoSection: {
-      navLabel: 'Notes',
-      label: 'General Notes',
-      title: 'Working Principles',
-      description: 'General priorities followed during technical delivery.',
-    },
-    infoHighlights: [
-      'Modular implementation for maintainability and code quality.',
-      'Template and process design to reduce repetitive setup work.',
-      'Metrics and documentation discipline for team visibility.',
-      'Fast technical feedback and shared problem-solving culture.',
-      'Controlled and practical usage of AI-assisted development tools.',
-      'Contribution across backend, frontend, and integration layers as needed.',
-    ],
-    linksSection: {
-      navLabel: 'Links',
-      label: 'Links',
-      title: 'Profile Links',
-      description: 'Public profile links and technical publication channels.',
-      note: 'Direct email and phone details are intentionally not published on this site.',
-      contactHref: 'https://www.linkedin.com/in/muslum-guzel-2b60037a',
-      contactExternal: true,
-      headerCta: 'LinkedIn',
-      languageLabel: 'Language switcher',
-      footerNote: 'Technical profile',
-    },
-    socialLinks: [
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a', external: true },
-      { label: 'GitHub', href: 'https://github.com/muslumguzel', external: true },
-      { label: 'Medium', href: 'https://medium.com/@muslumguzel', external: true },
-    ],
-    languageOptions: [
-      { value: 'tr', label: 'Turkish', abbreviation: 'TR', flag: '🇹🇷' },
-      { value: 'en', label: 'English', abbreviation: 'EN', flag: '🇺🇸' },
-      { value: 'de', label: 'German', abbreviation: 'DE', flag: '🇩🇪' },
-    ],
-  },
-  de: {
-    metaDescription:
-      'Technisches Profil mit Fokus auf .NET Core, React, Go und KI-gestützte Integrationsarbeit.',
-    hero: {
-      roleLabel: 'Softwareentwickler',
-      title: 'Technisches Profil',
-      subtitle:
-        'Diese Seite ist bewusst kein CV. Sie zeigt Technologieschwerpunkte, allgemeine Arbeitsfelder und aktuelle technische Notizen.',
-      status: 'Allgemeines technisches Profil',
-      primaryAction: 'Tech Stack',
-      secondaryAction: 'LinkedIn-Profil',
-    },
-    aboutSection: {
-      navLabel: 'Überblick',
-      label: 'Überblick',
-      title: 'Umfang',
-      description:
-        '10+ Jahre Softwareentwicklung in Enterprise-Systemen mit Beiträgen in Backend, Frontend und Integrationsschichten.',
-    },
-    aboutHighlights: [
-      'Fokus: Enterprise-Anwendungen, Integrationsschichten und Developer-Tooling.',
-      'Ansatz: nachhaltige Architektur, wiederverwendbare Komponenten und klare Dokumentation.',
-      'Kernachse: .NET-Ökosystem, React-Oberflächen und API-zentrierte Systeme.',
-      'Aktueller Schwerpunkt: KI-unterstützte SDLC-Tool-Integrationen.',
-    ],
-    stackSection: {
-      navLabel: 'Stack',
-      label: 'Tech Stack',
-      title: 'Eingesetzte Technologien',
-      description: 'Aktiv verwendete Sprachen, Frameworks, Plattformen und Tools.',
-    },
-    stackGroups: [
-      {
-        title: 'Sprachen & Frameworks',
-        items: ['C#', '.NET Core / .NET 3.1', 'Go', 'React', 'JavaScript'],
-      },
-      {
-        title: 'KI & Integration',
-        items: ['MCP (Model Context Protocol)', 'LLM-Integrationen', 'Gateway-Integrationen', 'REST APIs'],
-      },
-      {
-        title: 'Tools & Plattformen',
-        items: ['Jira / TKJira', 'Confluence', 'SonarQube', 'GitHub Copilot', 'Azure DevOps'],
-      },
-      {
-        title: 'Architektur & Prozess',
-        items: ['Clean Architecture', 'Design Patterns', 'CI/CD', 'Agile / SCRUM', 'Dokumentation'],
-      },
-    ],
-    recentSection: {
-      navLabel: 'Aktuell',
-      label: 'Letzte 10 Monate',
-      title: 'Technische Zusammenfassung seit April 2025',
-      description:
-        'Technologie-Schwerpunkte aus der Arbeit in einer anderen Direktion innerhalb von Turkish Technology.',
-      period: 'April 2025 → Heute',
-    },
-    recentHighlights: [
-      'Einrichtung von .NET-3.1-Entwicklungsumgebungen und technischer Support dafür.',
-      'MCP-basierte Serverentwicklung für interne LLM-Integrationsarbeit.',
-      'Integrationsarbeit zwischen Jira, TKJira, Confluence, SonarQube und KI-Tools.',
-      'Webentwicklung für Dokumentation und Metrik-Transparenz.',
-      'Wiederverwendbare, sichere Template-Projekte gemäß Unternehmensstandards.',
-      'Go-basierte Feature-Beiträge in Model-Serving- und KI-Gateway-Schichten.',
-      'Lizenz-/Proxy-orientierter technischer Support für GitHub Copilot und ähnliche Assistenten.',
-    ],
-    infoSection: {
-      navLabel: 'Notizen',
-      label: 'Allgemeine Notizen',
-      title: 'Arbeitsprinzipien',
-      description: 'Allgemeine Prioritäten in der technischen Umsetzung.',
-    },
-    infoHighlights: [
-      'Modulare Umsetzung für Wartbarkeit und Codequalität.',
-      'Template- und Prozessdesign zur Reduzierung repetitiver Setup-Arbeit.',
-      'Metrik- und Dokumentationsdisziplin für Team-Transparenz.',
-      'Schnelles technisches Feedback und gemeinsames Problemlösen.',
-      'Kontrollierter und praxisnaher Einsatz KI-gestützter Entwicklungswerkzeuge.',
-      'Beiträge in Backend-, Frontend- und Integrationsschichten je nach Bedarf.',
-    ],
-    linksSection: {
-      navLabel: 'Links',
-      label: 'Links',
-      title: 'Profil-Links',
-      description: 'Öffentliche Profile und technische Publikationskanäle.',
-      note: 'Direkte E-Mail- und Telefondaten werden auf dieser Seite bewusst nicht veröffentlicht.',
-      contactHref: 'https://www.linkedin.com/in/muslum-guzel-2b60037a',
-      contactExternal: true,
-      headerCta: 'LinkedIn',
-      languageLabel: 'Sprachauswahl',
-      footerNote: 'Technisches Profil',
-    },
-    socialLinks: [
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a', external: true },
-      { label: 'GitHub', href: 'https://github.com/muslumguzel', external: true },
-      { label: 'Medium', href: 'https://medium.com/@muslumguzel', external: true },
-    ],
-    languageOptions: [
-      { value: 'tr', label: 'Türkisch', abbreviation: 'TR', flag: '🇹🇷' },
-      { value: 'en', label: 'Englisch', abbreviation: 'EN', flag: '🇺🇸' },
-      { value: 'de', label: 'Deutsch', abbreviation: 'DE', flag: '🇩🇪' },
-    ],
-  },
+const profile = {
+  name: 'Müslüm GÜZEL',
+  role: 'Software Developer',
+  summary:
+    'Kurumsal uygulamalar ve entegrasyon katmanlarında .NET, React, Go ve API tabanlı sistemlerle çalışıyorum.',
+  whatIDo:
+    'Sade ve sürdürülebilir yazılım geliştirme yaklaşımıyla backend, frontend ve AI destekli entegrasyon akışlarında üretim yapıyorum.',
+  stack: [
+    '.NET Core / C#',
+    'React',
+    'Go',
+    'REST API',
+    'MCP / LLM Integrations',
+    'CI/CD',
+    'Azure DevOps',
+    'Jira / Confluence',
+    'SonarQube',
+    'GitHub Copilot',
+  ],
+  links: [
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muslum-guzel-2b60037a' },
+    { label: 'GitHub', href: 'https://github.com/muslumguzel' },
+    { label: 'Medium', href: 'https://medium.com/@muslumguzel' },
+  ],
 };
 
-const defaultLang = 'tr';
 const meta = {
-  title: 'Müslüm GÜZEL · Teknik Profil',
-  description: translations[defaultLang].metaDescription,
+  title: 'Müslüm GÜZEL · Software Developer',
+  description: 'Sade teknik profil: isim, meslek, ne iş yaptığı ve tech stack.',
   url: 'https://muslumguzel.com',
 };
-
-const base = (import.meta.env.BASE_URL ?? '/').replace(/\/+$/, '');
-const faviconUrl = `${base || ''}/favicon.svg`;
 ---
 
 <!DOCTYPE html>
-<html lang={defaultLang} class="scroll-smooth">
+<html lang="tr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{meta.title}</title>
     <meta name="description" content={meta.description} />
-    <meta name="author" content="Müslüm GÜZEL" />
-    <meta name="keywords" content=".NET, React, Go, MCP, LLM, yazılım geliştirme, teknik profil" />
+    <meta name="author" content={profile.name} />
+    <meta name="keywords" content=".NET, React, Go, MCP, software developer" />
     <link rel="canonical" href={meta.url} />
-    <link rel="icon" type="image/svg+xml" href={faviconUrl} />
+    <link rel="icon" type="image/svg+xml" href="/cv-site/favicon.svg" />
 
     <meta property="og:title" content={meta.title} />
     <meta property="og:description" content={meta.description} />
     <meta property="og:type" content="profile" />
     <meta property="og:url" content={meta.url} />
-    <meta property="profile:first_name" content="Müslüm" />
-    <meta property="profile:last_name" content="GÜZEL" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={meta.title} />
-    <meta name="twitter:description" content={meta.description} />
 
     <style>
       :root {
-        color-scheme: dark;
+        --paper: #f4f5f6;
+        --ink: #172228;
+        --muted: #5f6c73;
+        --line: #d9dde1;
       }
 
-      body[data-active-lang='tr'] [data-view='tr'] {
-        display: block;
+      * {
+        box-sizing: border-box;
       }
 
-      body[data-active-lang='tr'] [data-view='en'],
-      body[data-active-lang='tr'] [data-view='de'] {
-        display: none;
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: 'Avenir Next', 'Gill Sans', 'Trebuchet MS', sans-serif;
       }
 
-      body[data-active-lang='en'] [data-view='en'] {
-        display: block;
+      .hero {
+        position: relative;
+        min-height: 84vh;
+        overflow: hidden;
+        background:
+          linear-gradient(180deg, rgba(7, 20, 33, 0.5), rgba(9, 24, 39, 0.75)),
+          radial-gradient(120% 90% at 20% 18%, rgba(161, 196, 220, 0.42), transparent 60%),
+          linear-gradient(155deg, #2a4862 0%, #1a334a 42%, #12273c 100%);
       }
 
-      body[data-active-lang='en'] [data-view='tr'],
-      body[data-active-lang='en'] [data-view='de'] {
-        display: none;
+      .hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          repeating-linear-gradient(-19deg, rgba(220, 236, 247, 0.2) 0 7px, rgba(145, 173, 191, 0.06) 7px 15px),
+          linear-gradient(90deg, rgba(8, 18, 31, 0.2), rgba(8, 18, 31, 0.55));
+        mix-blend-mode: screen;
+        opacity: 0.5;
       }
 
-      body[data-active-lang='de'] [data-view='de'] {
-        display: block;
+      .hero::after {
+        content: '';
+        position: absolute;
+        left: 19%;
+        right: 22%;
+        top: 12%;
+        bottom: -8%;
+        background:
+          linear-gradient(180deg, rgba(214, 233, 245, 0.38), rgba(196, 220, 238, 0.06)),
+          repeating-linear-gradient(-15deg, rgba(229, 241, 249, 0.35) 0 6px, rgba(158, 187, 206, 0.22) 6px 12px);
+        clip-path: polygon(19% 0%, 34% 7%, 48% 2%, 65% 10%, 80% 0%, 100% 24%, 84% 49%, 70% 74%, 60% 100%, 38% 100%, 31% 78%, 16% 62%, 0% 34%);
+        opacity: 0.46;
+        filter: blur(0.5px);
       }
 
-      body[data-active-lang='de'] [data-view='tr'],
-      body[data-active-lang='de'] [data-view='en'] {
-        display: none;
+      .menu {
+        position: absolute;
+        right: 28px;
+        top: 22px;
+        color: rgba(238, 245, 249, 0.9);
+        letter-spacing: 0.28em;
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        z-index: 3;
+      }
+
+      .hero-center {
+        position: relative;
+        z-index: 3;
+        min-height: 84vh;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 56px 22px;
+        color: #f2f6f8;
+      }
+
+      .title-wrap {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+      }
+
+      .title-wrap::before,
+      .title-wrap::after {
+        content: '';
+        width: min(520px, 74vw);
+        height: 1px;
+        background: rgba(240, 246, 250, 0.7);
+      }
+
+      .role {
+        margin: 0;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+        color: rgba(238, 245, 249, 0.85);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      .hero-sub {
+        margin: 18px 0 0;
+        color: rgba(228, 239, 246, 0.9);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: clamp(0.72rem, 1.5vw, 1rem);
+      }
+
+      .content {
+        max-width: 1020px;
+        margin: -86px auto 56px;
+        padding: 0 24px;
+        position: relative;
+        z-index: 5;
+      }
+
+      .card {
+        background: #f8f9fa;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 28px;
+        box-shadow: 0 24px 48px -34px rgba(16, 31, 44, 0.28);
+      }
+
+      .card + .card {
+        margin-top: 14px;
+      }
+
+      .card h2 {
+        margin: 0 0 10px;
+        font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
+        font-size: 1.7rem;
+        letter-spacing: -0.01em;
+      }
+
+      .card p {
+        margin: 0;
+        color: #3f4d54;
+        line-height: 1.65;
+      }
+
+      .stack {
+        margin: 18px 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        padding: 0;
+      }
+
+      .stack li {
+        list-style: none;
+        border: 1px solid #cdd5da;
+        color: #1a2a33;
+        background: #ffffff;
+        border-radius: 999px;
+        padding: 8px 12px;
+        font-size: 0.88rem;
+      }
+
+      .links {
+        margin-top: 12px;
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .links a {
+        color: #1b3d51;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(27, 61, 81, 0.3);
+        padding-bottom: 1px;
+        font-weight: 560;
+      }
+
+      @media (max-width: 760px) {
+        .hero,
+        .hero-center {
+          min-height: 72vh;
+        }
+
+        .content {
+          margin-top: -58px;
+          padding: 0 14px;
+        }
+
+        .card {
+          padding: 22px;
+        }
       }
     </style>
   </head>
-  <body class="min-h-screen bg-slate-950 text-slate-100 antialiased" data-active-lang={defaultLang}>
-    <div id="view-container">
-      <PortfolioView content={translations[defaultLang]} lang="tr" />
-    </div>
+  <body>
+    <section class="hero" id="home">
+      <span class="menu">Menu</span>
 
-    <template id="view-en">
-      <PortfolioView content={translations.en} lang="en" />
-    </template>
+      <div class="hero-center">
+        <div>
+          <p class="role">{profile.role}</p>
+          <div class="title-wrap">
+            <h1>{profile.name}</h1>
+          </div>
+          <p class="hero-sub">.NET Core | React | Go | API Integrations</p>
+        </div>
+      </div>
+    </section>
 
-    <template id="view-de">
-      <PortfolioView content={translations.de} lang="de" />
-    </template>
+    <main class="content">
+      <section class="card" id="about">
+        <h2>Ne İş Yapıyorum</h2>
+        <p>{profile.summary}</p>
+        <p style="margin-top: 10px;">{profile.whatIDo}</p>
+      </section>
 
-    <script is:inline>
-      const SUPPORTED_LANGS = ['tr', 'en', 'de'];
-      const viewContainer = document.getElementById('view-container');
-      const renderedViews = { tr: viewContainer.querySelector('[data-view="tr"]') };
-      const DEFAULT_LANG = document.body.dataset.activeLang || 'tr';
+      <section class="card" id="stack">
+        <h2>Tech Stack</h2>
+        <ul class="stack">
+          {profile.stack.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </section>
 
-      function getTemplate(lang) {
-        const template = document.getElementById(`view-${lang}`);
-        return template ? template.content.cloneNode(true) : null;
-      }
-
-      function getStoredPreference() {
-        const stored = localStorage.getItem('preferredLang');
-        if (stored && SUPPORTED_LANGS.indexOf(stored) !== -1) {
-          return stored;
-        }
-        return null;
-      }
-
-      function detectBrowserLanguage() {
-        const languages = navigator.languages;
-        const candidates = Array.isArray(languages) && languages.length > 0 ? [...languages] : [];
-        if (navigator.language) {
-          candidates.push(navigator.language);
-        }
-        for (let i = 0; i < candidates.length; i += 1) {
-          const value = candidates[i];
-          if (!value) continue;
-          const lower = value.toLowerCase();
-          if (lower.indexOf('tr') === 0) return 'tr';
-          if (lower.indexOf('de') === 0) return 'de';
-          if (lower.indexOf('en') === 0) return 'en';
-        }
-        return DEFAULT_LANG;
-      }
-
-      let activeLang = DEFAULT_LANG;
-
-      function updateToggleState(view, lang) {
-        if (!view) return;
-        const toggles = view.querySelectorAll('[data-language-option]');
-        for (let i = 0; i < toggles.length; i += 1) {
-          const toggle = toggles[i];
-          const value = toggle.getAttribute('data-language-option');
-          const isActive = value === lang;
-          toggle.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-          toggle.classList.toggle('is-active', isActive);
-        }
-      }
-
-      function updateAllToggleStates() {
-        for (const key in renderedViews) {
-          if (Object.prototype.hasOwnProperty.call(renderedViews, key)) {
-            updateToggleState(renderedViews[key], activeLang);
-          }
-        }
-      }
-
-      function bindLanguageControls(view) {
-        if (!view) return;
-        const toggles = view.querySelectorAll('[data-language-option]');
-        for (let i = 0; i < toggles.length; i += 1) {
-          const toggle = toggles[i];
-          if (toggle.getAttribute('data-bound') === 'true') continue;
-          toggle.addEventListener('click', function (event) {
-            const target = event.currentTarget.getAttribute('data-language-option');
-            if (SUPPORTED_LANGS.indexOf(target) !== -1 && target !== activeLang) {
-              setLanguage(target);
-            }
-          });
-          toggle.setAttribute('data-bound', 'true');
-        }
-        updateToggleState(view, activeLang);
-      }
-
-      function setLanguage(lang) {
-        if (SUPPORTED_LANGS.indexOf(lang) === -1) return;
-        let view = renderedViews[lang];
-
-        if (!view) {
-          const fragment = getTemplate(lang);
-          if (!fragment) return;
-          view = fragment.querySelector('[data-view]');
-          renderedViews[lang] = view;
-        }
-
-        if (!view) return;
-
-        viewContainer.replaceChildren(view);
-        document.body.dataset.activeLang = lang;
-        document.documentElement.lang = lang;
-        activeLang = lang;
-        localStorage.setItem('preferredLang', lang);
-        bindLanguageControls(view);
-        updateAllToggleStates();
-      }
-
-      function initialise() {
-        bindLanguageControls(renderedViews.tr);
-        const stored = getStoredPreference();
-        const preferred = stored || detectBrowserLanguage();
-        if (preferred !== activeLang) {
-          setLanguage(preferred);
-        } else {
-          updateAllToggleStates();
-        }
-      }
-
-      initialise();
-    </script>
+      <section class="card" id="contact">
+        <h2>Bağlantılar</h2>
+        <div class="links">
+          {profile.links.map((link) => (
+            <a href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+          ))}
+        </div>
+      </section>
+    </main>
   </body>
 </html>
